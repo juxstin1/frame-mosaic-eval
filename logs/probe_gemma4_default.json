@@ -1,0 +1,264 @@
+{
+ "models": {
+  "models": [
+   {
+    "name": "gemma-4-12B-it-QAT-Q4_0.gguf",
+    "model": "gemma-4-12B-it-QAT-Q4_0.gguf",
+    "modified_at": "",
+    "size": "",
+    "digest": "",
+    "type": "model",
+    "description": "",
+    "tags": [
+     ""
+    ],
+    "capabilities": [
+     "completion",
+     "multimodal"
+    ],
+    "parameters": "",
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "",
+     "families": [
+      ""
+     ],
+     "parameter_size": "",
+     "quantization_level": ""
+    }
+   }
+  ],
+  "object": "list",
+  "data": [
+   {
+    "id": "gemma-4-12B-it-QAT-Q4_0.gguf",
+    "aliases": [],
+    "tags": [],
+    "object": "model",
+    "created": 1792720198,
+    "owned_by": "llamacpp",
+    "meta": {
+     "vocab_type": 2,
+     "n_vocab": 262144,
+     "n_ctx": 32768,
+     "n_ctx_train": 262144,
+     "n_embd": 3840,
+     "n_params": 11907350576,
+     "size": 6960054464
+    }
+   }
+  ]
+ },
+ "props": {
+  "model_path": "<MODELS_DIR>/lmstudio-community/gemma-4-12B-it-QAT-GGUF/gemma-4-12B-it-QAT-Q4_0.gguf",
+  "modalities": {
+   "vision": true,
+   "audio": true
+  },
+  "build_info": "b9555-daf6bc9f2",
+  "total_slots": 1,
+  "n_ctx": 32768
+ },
+ "text_only_prompt_tokens": 27,
+ "single_frame": {
+  "truth": 53,
+  "answer": "53",
+  "reasoning": null,
+  "usage": {
+   "completion_tokens": 3,
+   "prompt_tokens": 150,
+   "total_tokens": 153,
+   "prompt_tokens_details": {
+    "cached_tokens": 1
+   }
+  },
+  "latency_s": 0.368
+ },
+ "token_cost": [
+  {
+   "case": "frame512",
+   "sizes": [
+    [
+     512,
+     512
+    ]
+   ],
+   "measured_image_tokens": 123,
+   "predicted_vision_tokens": 121,
+   "predicted_encoder_wh": [
+    [
+     528,
+     528
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.383,
+   "answer": "53"
+  },
+  {
+   "case": "square256",
+   "sizes": [
+    [
+     256,
+     256
+    ]
+   ],
+   "measured_image_tokens": 51,
+   "predicted_vision_tokens": 49,
+   "predicted_encoder_wh": [
+    [
+     336,
+     336
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.369,
+   "answer": "53"
+  },
+  {
+   "case": "square768",
+   "sizes": [
+    [
+     768,
+     768
+    ]
+   ],
+   "measured_image_tokens": 258,
+   "predicted_vision_tokens": 256,
+   "predicted_encoder_wh": [
+    [
+     768,
+     768
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.448,
+   "answer": "53"
+  },
+  {
+   "case": "square1024",
+   "sizes": [
+    [
+     1024,
+     1024
+    ]
+   ],
+   "measured_image_tokens": 258,
+   "predicted_vision_tokens": 256,
+   "predicted_encoder_wh": [
+    [
+     768,
+     768
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.522,
+   "answer": "53"
+  },
+  {
+   "case": "square1536",
+   "sizes": [
+    [
+     1536,
+     1536
+    ]
+   ],
+   "measured_image_tokens": 258,
+   "predicted_vision_tokens": 256,
+   "predicted_encoder_wh": [
+    [
+     768,
+     768
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.507,
+   "answer": "53"
+  },
+  {
+   "case": "square2048",
+   "sizes": [
+    [
+     2048,
+     2048
+    ]
+   ],
+   "measured_image_tokens": 258,
+   "predicted_vision_tokens": 256,
+   "predicted_encoder_wh": [
+    [
+     768,
+     768
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.531,
+   "answer": "53"
+  },
+  {
+   "case": "4_separate_512",
+   "sizes": [
+    [
+     512,
+     512
+    ],
+    [
+     512,
+     512
+    ],
+    [
+     512,
+     512
+    ],
+    [
+     512,
+     512
+    ]
+   ],
+   "measured_image_tokens": 492,
+   "predicted_vision_tokens": 484,
+   "predicted_encoder_wh": [
+    [
+     528,
+     528
+    ],
+    [
+     528,
+     528
+    ],
+    [
+     528,
+     528
+    ],
+    [
+     528,
+     528
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 1.274,
+   "answer": "53"
+  },
+  {
+   "case": "mosaic16_tot1536",
+   "sizes": [
+    [
+     1536,
+     1536
+    ]
+   ],
+   "measured_image_tokens": 258,
+   "predicted_vision_tokens": 256,
+   "predicted_encoder_wh": [
+    [
+     768,
+     768
+    ]
+   ],
+   "overhead_per_image": 2.0,
+   "latency_s": 0.679,
+   "answer": "20 99 30"
+  }
+ ]
+}

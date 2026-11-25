@@ -1,0 +1,8 @@
+data/
+__pycache__/
+*.pyc
+.venv/
+logs/server/*.log
+logs/server/current.json
+vendor/
+build/

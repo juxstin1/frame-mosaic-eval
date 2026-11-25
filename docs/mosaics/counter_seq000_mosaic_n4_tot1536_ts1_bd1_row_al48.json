@@ -1,0 +1,72 @@
+{
+ "condition": {
+  "n": 4,
+  "budget": "fixed_total",
+  "total_side": 1536,
+  "tile_side": 384,
+  "timestamps": true,
+  "borders": true,
+  "order": "row",
+  "aligned": true,
+  "align": 48,
+  "fmt": "mosaic"
+ },
+ "key": "mosaic_n4_tot1536_ts1_bd1_row_al48",
+ "rows": 2,
+ "cols": 2,
+ "tile_px": 768,
+ "pad_px": 0,
+ "image_wh": [
+  [
+   1536,
+   1536
+  ]
+ ],
+ "cells": [
+  {
+   "frame": 1,
+   "row": 0,
+   "col": 0,
+   "box": [
+    0,
+    0,
+    768,
+    768
+   ]
+  },
+  {
+   "frame": 2,
+   "row": 0,
+   "col": 1,
+   "box": [
+    768,
+    0,
+    1536,
+    768
+   ]
+  },
+  {
+   "frame": 3,
+   "row": 1,
+   "col": 0,
+   "box": [
+    0,
+    768,
+    768,
+    1536
+   ]
+  },
+  {
+   "frame": 4,
+   "row": 1,
+   "col": 1,
+   "box": [
+    768,
+    768,
+    1536,
+    1536
+   ]
+  }
+ ],
+ "source": "data\\frames\\counter\\n4\\seq000"
+}

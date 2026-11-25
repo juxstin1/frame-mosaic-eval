@@ -1,0 +1,41 @@
+{
+ "label": "gemma4_default",
+ "build": "b9555-vulkan",
+ "started": "20261022-224951",
+ "port": 8090,
+ "cmd": [
+  "vendor/llama-b9555-vulkan/llama-server.exe",
+  "-m",
+  "<MODELS_DIR>/lmstudio-community/gemma-4-12B-it-QAT-GGUF/gemma-4-12B-it-QAT-Q4_0.gguf",
+  "--mmproj",
+  "<MODELS_DIR>/lmstudio-community/gemma-4-12B-it-QAT-GGUF/mmproj-gemma-4-12B-it-QAT-BF16.gguf",
+  "-c",
+  "32768",
+  "-ngl",
+  "999",
+  "-np",
+  "1",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "--device",
+  "Vulkan0",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "8090",
+  "--jinja"
+ ],
+ "cmdline": "vendor/llama-b9555-vulkan/llama-server.exe -m <MODELS_DIR>/lmstudio-community/gemma-4-12B-it-QAT-GGUF/gemma-4-12B-it-QAT-Q4_0.gguf --mmproj <MODELS_DIR>/lmstudio-community/gemma-4-12B-it-QAT-GGUF/mmproj-gemma-4-12B-it-QAT-BF16.gguf -c 32768 -ngl 999 -np 1 -b 2048 -ub 2048 --device Vulkan0 --host 127.0.0.1 --port 8090 --jinja",
+ "version": [
+  "version: 9555 (daf6bc9f2)",
+  "built with Clang 19.1.5 for Windows x86_64"
+ ],
+ "model": "gemma4",
+ "provenance": "Gemma 4 12B it QAT Q4_0 GGUF + BF16 mmproj, lmstudio-community",
+ "model_sha256": "f568ac5de71c8fcac5d5794494388ad94db9e18b4368ca897e21b30d2448eeec",
+ "mmproj_sha256": "d027f45ce5522f0e4dd2f777049c9a0cd3abbfddf7f4efe5ade22610d9b9ab54",
+ "log": "logs\\server\\gemma4_default_20261022-224951.log",
+ "pid": 60556
+}

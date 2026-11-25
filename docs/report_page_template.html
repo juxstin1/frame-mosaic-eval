@@ -1,0 +1,241 @@
+<title>Frame Mosaic Capacity</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column (~68ch) with figures allowed to run wider; research-note register. */
+:root {
+  --bg: #f6f7f9; --fg: #14171c; --muted: #596070; --rule: #dde1e8; --accent: #2a78d6;
+  --plate: #fcfcfb; --chip: #e9eef6;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121418; --fg: #e7e9ee; --muted: #9aa1ae; --rule: #2a2f38; --accent: #6da7ec; --plate: #fcfcfb; --chip: #1c2330;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121418; --fg: #e7e9ee; --muted: #9aa1ae; --rule: #2a2f38; --accent: #6da7ec; --plate: #fcfcfb; --chip: #1c2330;
+  color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 40px; }
+.col { max-width: 70ch; display: grid; gap: 14px; min-width: 0; }
+h1, h2 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.45rem; }
+p, ul { margin: 0; } ul { padding-left: 1.2em; display: grid; gap: 6px; }
+.eyebrow { font: 500 0.78rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.15rem; color: var(--fg); }
+.meta { color: var(--muted); font-size: 0.9rem; }
+strong { font-weight: 600; }
+code, .num { font-family: var(--mono); font-size: 0.9em; font-variant-numeric: tabular-nums; }
+code { background: var(--chip); padding: 1px 5px; border-radius: 4px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.stat { border-top: 2px solid var(--accent); padding-top: 10px; display: grid; gap: 4px; align-content: start; }
+.stat .v { font: 600 2.2rem/1 var(--display); font-variant-numeric: tabular-nums; }
+.stat .l { color: var(--muted); font-size: 0.92rem; }
+figure { margin: 0; display: grid; gap: 10px; min-width: 0; }
+.plate { background: var(--plate); border: 1px solid var(--rule); border-radius: 6px; padding: 8px; overflow-x: auto; }
+.plate img { display: block; width: 100%; min-width: 640px; height: auto; }
+figcaption { color: var(--muted); font-size: 0.92rem; max-width: 80ch; }
+.table { overflow-x: auto; border-top: 1px solid var(--rule); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+td.n { font-family: var(--mono); white-space: nowrap; }
+.ruler { display: grid; grid-template-columns: repeat(8, minmax(64px, 1fr)); gap: 0; min-width: 560px; }
+.ruler div { border-left: 1px solid var(--rule); padding: 6px 8px; display: grid; gap: 2px; }
+.ruler .k { font: 600 1.05rem/1 var(--display); }
+.ruler .s { font: 400 0.8rem/1.2 var(--mono); color: var(--muted); }
+.rule-of-thumb { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; display: grid; gap: 8px; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <header class="col">
+    <span class="eyebrow">Draft · updated 23 Oct 2026 (trace audit) · Gemma 4 12B · llama.cpp b9555</span>
+    <h1>How much time fits in an image?</h1>
+    <p class="lede">Capacity limits of frame mosaics for vision-language models. We packed N synthetic video frames with known answers into one grid image and measured where the model stops reading them reliably.</p>
+    <p class="meta">About 1,900 scored model calls. Every number below is regenerated from the logged calls by <code>python -m analysis.make_all</code> and <code>python -m analysis.position</code>.</p>
+  </header>
+
+  <section class="stats" aria-label="Headline results">
+    <div class="stat"><span class="v">N = 12</span><span class="l">Breaking point with no frame labels (accuracy under 0.75, 224 px tiles)</span></div>
+    <div class="stat"><span class="v">64 frames</span><span class="l">Still read at 0.9–1.0 with frame numbers and borders burned in (96 px per frame)</span></div>
+    <div class="stat"><span class="v">+0.06</span><span class="l">Accuracy gained from 4× the vision tokens per image (paired, 95% CI +0.02 to +0.11)</span></div>
+    <div class="stat"><span class="v">~100×</span><span class="l">More output tokens to reach the same accuracy by reasoning instead of burning in frame numbers</span></div>
+  </section>
+
+  <section class="col">
+    <span class="eyebrow">What the model actually sees</span>
+    <p>llama.cpp squashes every Gemma image of 768² or more down to 768² under default settings. A 1,536² mosaic therefore gives each frame this many pixels:</p>
+  </section>
+  <div class="table" style="border-top:0">
+    <div class="ruler" role="table" aria-label="Pixels per frame by grid size">
+      <div><span class="k">4</span><span class="s">384 px</span></div>
+      <div><span class="k">9</span><span class="s">256 px</span></div>
+      <div><span class="k">12</span><span class="s">224 px</span></div>
+      <div><span class="k">16</span><span class="s">192 px</span></div>
+      <div><span class="k">25</span><span class="s">154 px</span></div>
+      <div><span class="k">36</span><span class="s">128 px</span></div>
+      <div><span class="k">49</span><span class="s">110 px</span></div>
+      <div><span class="k">64</span><span class="s">96 px</span></div>
+    </div>
+  </div>
+
+  <figure>
+    <div class="plate"><img src="{{FIG_N}}" alt="Three panels of accuracy against frames per mosaic for moving_dot, tile_probe and count_events. Lines with timestamps stay near 1.0; lines with no labels fall below 0.75 at 12 frames and reach about 0.2 at 64."></div>
+    <figcaption><strong>Figure 1.</strong> Accuracy against frames per mosaic, default image limits. Rings mark the breaking point (first N below 0.75); bands are 95% Wilson intervals. 10 sequences per point, 30 at N = 9, 12, 16 and 25 where the curve drops.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h2>Findings</h2>
+    <ul>
+      <li><strong>Without labels, Gemma loses track of the grid at 12 frames.</strong> tile_probe goes 0.83 → 0.57 → 0.43 from N = 9 to 12 to 16; moving_dot goes 0.77 → 0.60 → 0.43. Both reach about 0.2 at N = 64.</li>
+      <li><strong>Burned-in frame numbers remove most of the limit.</strong> moving_dot stays at 0.9 or above all the way to 64 frames.</li>
+      <li><strong>Borders fix counting.</strong> With neither labels nor borders, count_events scores 0.04 even at 4 frames, because dark empty frames merge into one background. Borders alone lift it to 0.70.</li>
+      <li><strong>Grid size matters far more than resolution.</strong> 4× the vision tokens adds a real but small +0.06. At the same 64 vision tokens per frame, a 4-frame grid scores 0.90 and a 16-frame grid scores 0.47.</li>
+      <li><strong>Wrong answers often land on the first frame of a row.</strong> In the N = 16 controlled-position run, 71% of wrong parsed moving_dot answers and 56% of wrong parsed tile_probe answers land on a row's first cell, against the stated 27% chance reference.</li>
+      <li><strong>Frame numbers and reasoning each fix most of it.</strong> On moving_dot they are level; on tile_probe frame numbers lead (0.83 vs 0.71; exact McNemar on the 48 paired sequences, 9 vs 3 discordant, p = 0.15), and borders close most of the rest. Labelling only the columns or only the rows does not help.</li>
+    </ul>
+  </section>
+
+  <figure>
+    <div class="plate"><img src="{{FIG_T}}" alt="Accuracy against vision tokens per frame on a log axis, for default and 1024-token image limits. The 1024 points sit only slightly above the default curve at matching grid sizes."></div>
+    <figcaption><strong>Figure 2.</strong> Accuracy against vision tokens per frame, drawn the way DeepSeek-OCR reports text compression. No timestamps or borders. Raising the limit to 1,024 tokens (orange) adds pixels but barely moves accuracy at the same grid size.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h2>Effect sizes</h2>
+    <p class="meta">Paired on identical sequences; seeded bootstrap 95% intervals.</p>
+  </section>
+  <div class="table">
+    <table>
+      <thead><tr><th>Change</th><th>Task</th><th>Matched calls</th><th>Accuracy before → after</th><th>Difference (95% CI)</th></tr></thead>
+      <tbody>
+        <tr><td>Timestamps on</td><td>moving_dot</td><td class="n">70</td><td class="n">0.50 → 0.97</td><td class="n">+0.47 (+0.36 to +0.59)</td></tr>
+        <tr><td>Timestamps on</td><td>tile_probe</td><td class="n">90</td><td class="n">0.47 → 0.83</td><td class="n">+0.37 (+0.26 to +0.48)</td></tr>
+        <tr><td>Timestamps on</td><td>count_events</td><td class="n">70</td><td class="n">0.04 → 0.84</td><td class="n">+0.80 (+0.70 to +0.89)</td></tr>
+        <tr><td>Borders on, no timestamps</td><td>count_events</td><td class="n">70</td><td class="n">0.04 → 0.70</td><td class="n">+0.66 (+0.54 to +0.77)</td></tr>
+        <tr><td>Borders on, with timestamps</td><td>tile_probe</td><td class="n">70</td><td class="n">0.81 → 0.99</td><td class="n">+0.17 (+0.09 to +0.26)</td></tr>
+        <tr><td>Borders on, with timestamps</td><td>moving_dot</td><td class="n">70</td><td class="n">0.97 → 0.99</td><td class="n">+0.01 (−0.03 to +0.07)</td></tr>
+        <tr><td>Borders on, with timestamps</td><td>count_events</td><td class="n">70</td><td class="n">0.84 → 0.86</td><td class="n">+0.01 (−0.07 to +0.11)</td></tr>
+        <tr><td>4× image tokens (1,024 limit)</td><td>moving_dot + tile_probe, N 9–16</td><td class="n">180</td><td class="n">0.61 → 0.67</td><td class="n">+0.06 (+0.02 to +0.11)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure>
+    <div class="plate"><img src="{{FIG_H}}" alt="Two 3 by 3 heatmaps of error rate by where the target frame sat in the grid. moving_dot errors peak at bottom-centre (89 percent); tile_probe errors peak in the top row and are lowest at bottom-right (4 percent)."></div>
+    <figcaption><strong>Figure 3.</strong> Error rate by where the target frame sat in the grid (N ≥ 9, no labels, positions pooled into thirds). Only a hint: 8 to 41 calls per cell and mixed grid sizes. The controlled run below replaces it.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h2>Where the model loses its place</h2>
+    <p>To test position directly, we placed the target frame at every one of the 16 cells of a 4 × 4 mosaic on purpose (5 sequences per cell, no labels).</p>
+  </section>
+
+  <figure>
+    <div class="plate"><img src="{{FIG_P}}" alt="Two 4 by 4 heatmaps of error rate per target cell. moving_dot is never wrong at frames 2, 3, 4, 6, 9, 13 and 16 and almost always wrong at 7, 8, 10, 12, 14 and 15. Frame 16 is always right in both tasks."></div>
+    <figcaption><strong>Figure 4.</strong> Error rate when the target is placed at each cell of a 4 × 4 mosaic. Most cells are either always right or almost always wrong across their sequences. With greedy decoding and near-identical frames this consistency is partly expected.</figcaption>
+  </figure>
+
+  <section class="col">
+    <ul>
+      <li><strong>Wrong answers snap to the first cell of a row:</strong> 71% for moving_dot and 56% for tile_probe, against 27% by chance. The most common answers are 13 and 9, the starts of rows 4 and 3.</li>
+      <li><strong>Some "always right" cells may be guesses that happen to match.</strong> moving_dot is never wrong at 9 and 13, which are also its favourite wrong answers. Frames 1 and 5 are row starts too but are 80% wrong, so this is a preference for 9 and 13, not for row starts in general. A no-target control (ask with no red dot anywhere) would separate "finds the target" from "says 9 or 13 a lot". Not yet run.</li>
+    </ul>
+  </section>
+
+  <figure>
+    <div class="plate"><img src="{{FIG_O}}" alt="Two 7 by 7 grids counting where wrong answers landed relative to the true cell. moving_dot errors cluster one or two cells to the left in the same row and one row down; tile_probe errors cluster one row down."></div>
+    <figcaption><strong>Figure 5.</strong> Where wrong answers landed, in grid cells relative to the true cell (+). moving_dot misses drift left toward the row start; tile_probe misses drift one row down. These are number-only answers; misses go both earlier and later than the truth.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h2>Snake order: the error is in frame numbers, not screen position</h2>
+    <p>In snake order, rows alternate direction, so the start of rows 2 and 4 in reading order sits on the right edge. Wrong answers followed the reading order: they landed on those right-edge row starts (26–40%) and almost never on left-edge cells that are not row starts (0–2%). For the same sequence, the wrong answer was the same number in both layouts 60–65% of the time, and never followed the on-screen cell. Snake order also costs accuracy: moving_dot falls from 0.54 to 0.21.</p>
+  </section>
+
+  <figure>
+    <div class="plate"><img src="{{FIG_S}}" alt="Two 4 by 4 heatmaps of error rate per cell in snake order, with snake frame numbers marked in each cell. Most cells are wrong; the bottom-right cell (frame 13) is the easiest."></div>
+    <figcaption><strong>Figure 6.</strong> Error rate per cell in snake order (3 sequences per cell). Small numbers give each cell's frame index in snake order. moving_dot frame 13 sits bottom-right at 0% error while its screen neighbours are 100%: accuracy follows the number, not the cell. Frames 13 and 11, the two easy cells, are also the two most common snake answers, so the same answer-prior caveat as Figure 4 applies.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h2>Four fixes compared</h2>
+    <p class="meta">Same 48 sequences per task under every condition (N = 16, every position, 3 sequences each). Paired exact McNemar tests.</p>
+  </section>
+  <div class="table">
+    <table>
+      <thead><tr><th>Condition</th><th>moving_dot</th><th>tile_probe</th><th>Output tokens per call</th><th>Median latency</th></tr></thead>
+      <tbody>
+        <tr><td>No labels, number only</td><td class="n">0.54</td><td class="n">0.27</td><td class="n">3</td><td class="n">0.5 s</td></tr>
+        <tr><td>Reasoning allowed</td><td class="n">0.98</td><td class="n">0.71</td><td class="n">270–350</td><td class="n">4–5.5 s</td></tr>
+        <tr><td>Frame numbers burned in</td><td class="n">0.94</td><td class="n">0.83</td><td class="n">2–3</td><td class="n">0.5 s</td></tr>
+        <tr><td>Frame numbers + reasoning</td><td class="n">0.90</td><td class="n">0.79</td><td class="n">270–350</td><td class="n">3.7–4.6 s</td></tr>
+        <tr><td>Column labels only (c1–c4)</td><td class="n">0.42</td><td class="n">–</td><td class="n">3</td><td class="n">0.6 s</td></tr>
+        <tr><td>Row labels only (r1–r4)</td><td class="n">0.46</td><td class="n">–</td><td class="n">3</td><td class="n">0.6 s</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <section class="col">
+    <ul>
+      <li><strong>Frame numbers and reasoning each fix most errors</strong> (p &lt; 1e-5 on both tasks). Frame numbers do it with about 100× fewer output tokens and about 9× lower latency.</li>
+      <li><strong>They don't stack.</strong> Adding reasoning to frame numbers changes nothing significant.</li>
+      <li><strong>Partial coordinates don't help.</strong> Column-only labels did not help moving_dot (0.54 → 0.42; the drop is not significant, p = 0.07), and row-only labels gave 0.46. Gemma does not combine a printed coordinate with its own row count.</li>
+      <li><strong>Reasoning traces separate counting from seeing.</strong> All 236 written answers were read blind against the true frames. 184 of 190 traces map frames to cells correctly, no wrong answer comes from a numbering slip, and every answer follows from its own trace. In the reasoning traces, every wrong answer points later than the truth, never earlier (unlike the number-only misses in Figure 5): 21 of 26 one or two rows down, 5 one column right. Gemma sees the target in the wrong cell, then numbers that cell correctly.</li>
+      <li><strong>Labels bring their own errors.</strong> Without labels, moving_dot traces made 0 wrong colour claims in 665. With frame numbers they made 30, mostly "no dot is visible" in early frames, and 5 answers went wrong.</li>
+      <li><strong>"One row too low" is a tile-boundary problem.</strong> Across all targets, with frame numbers on, tile_probe is wrong 53–67% of the time when the star is in the bottom third of its tile and 0% when it is in the top or middle third. A low star sits right above the next row's label, and one trace says so: "the red star is located in the cell between the labels '5' and '9'" → "Answer: 9". Borders fix this (0.81 → 0.99 with frame numbers); reasoning does not.</li>
+    </ul>
+    <p class="meta">Latency for the reasoning-without-labels run is inflated because another job shared the server for part of it. Token counts are unaffected.</p>
+  </section>
+
+  <section class="col">
+    <h2>Rule of thumb</h2>
+    <div class="rule-of-thumb">
+      <p><strong>Always burn frame numbers into the tiles and draw borders.</strong> Frame numbers fix the counting; borders stop objects near a tile edge being assigned to the next tile. Then one 768²-effective mosaic carries up to 64 frames at about 96 px each for "which frame?" questions.</p>
+      <p><strong>For counting events, stay at or under 25 frames</strong> (about 150 px per frame). Past that, answers drift off by one.</p>
+      <p><strong>Without labels, use at most 9 frames</strong> (256 px tiles). A higher image token limit does not buy more frames.</p>
+      <p><strong>If you can't edit the frames, let the model reason before answering.</strong> It recovers most of the accuracy at about 100× the output tokens. Labelling only rows or only columns does not help.</p>
+    </div>
+    <p class="meta">Applies to Gemma 4 12B under llama.cpp's default image limits. Provisional: the page also shows labels causing errors (wrong colour claims, low stars assigned to the next row's label). The pending test, star near the bottom edge vs the centre of its tile with and without borders, decides whether top-left frame numbers plus borders stays the recommendation.</p>
+  </section>
+
+  <section class="col">
+    <h2>Method</h2>
+    <ul>
+      <li><strong>Frames:</strong> synthetic 512 × 512 sequences with exact answers, all seeded. moving_dot (a dot turns red at one frame), tile_probe (one frame has a red star), count_events (K frames flash a star).</li>
+      <li><strong>Mosaics:</strong> near-square grids, read row by row, fixed 1,536² budget, tiles in multiples of the 48 px vision patch. Optional frame numbers in each tile's top-left corner and 2–4 px borders.</li>
+      <li><strong>Model:</strong> Gemma 4 12B it QAT (Q4_0 GGUF, BF16 vision projector) on llama.cpp b9555 Vulkan, RX 9070 XT. Temperature 0, seed 0, thinking off.</li>
+      <li><strong>Image handling:</strong> our port of llama.cpp's resize rule predicted the server's token count exactly on every call.</li>
+      <li><strong>Scoring:</strong> exact match; off-by-one as a secondary metric. No answer failed to parse in the main Gemma sweep. Controlled-position runs include cut-off answers, counted as wrong and unparsed.</li>
+    </ul>
+  </section>
+
+  <section class="col">
+    <h2>Limitations and future work</h2>
+    <ul>
+      <li>A preliminary Qwen 3.5 9B coarse sweep exists (420 records, using the Jackrong/Qwopus3.5-9B-Coder-MTP coder fine-tune); it is not token-matched to Gemma. A token-matched comparison remains future work.</li>
+      <li>Patch-misaligned tiles, separate images versus one mosaic, the fixed-tile-size budget, and snake order beyond N = 16.</li>
+      <li>The position and fixes experiments use N = 16 only, with 3–5 sequences per cell.</li>
+      <li>The counter and event_order tasks.</li>
+      <li>Most cells have 10 sequences (95% interval about ±0.25). Synthetic frames, so absolute numbers will differ on real video.</li>
+    </ul>
+  </section>
+
+  <section class="col">
+    <h2>Related work</h2>
+    <ul>
+      <li><strong>IG-VLM</strong> (arXiv 2403.18406): grids of 4–20 frames for video QA; 6 frames worked best on 2024 models. Aggregate scores only.</li>
+      <li><strong>NumPro</strong> (Wu et al., CVPR 2025, arXiv 2411.10332): burns frame numbers into video frames so Vid-LLMs can name when an event happens. The same fix as our frame numbers, applied to separate frames rather than one mosaic.</li>
+      <li><strong>Set-of-Mark prompting</strong> (Yang et al. 2023, arXiv 2310.11441): overlays numbered marks on image regions so the model can refer to them by label. Our frame numbers are marks on tiles.</li>
+      <li><strong>Grid2Matrix</strong> (Zhang et al. 2026, arXiv 2604.09687): exact readout of colour grids collapses on small grids, and errors depend on how cells overlap vision patches.</li>
+      <li><strong>Position bias in multi-image VLMs</strong> (Tian et al., CVPR 2025, arXiv 2503.13792): answers shift when the same images change position in the sequence.</li>
+      <li><strong>DeepSeek-OCR</strong> (arXiv 2510.18234): accuracy against vision-token compression for text. Figure 2 uses the same axis for time.</li>
+    </ul>
+  </section>
+</div>
