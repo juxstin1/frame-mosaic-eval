@@ -1,0 +1,949 @@
+[
+  {
+    "completion_reported": 150,
+    "completion_total": 300,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 2,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "dsflash41",
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "answer_format": "integer",
+    "path": "results/deepinfra_new3_matched768_integer_v1/dsflash41_sweep.jsonl",
+    "responses": 150,
+    "correct": 113,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1145,
+    "completion_median": 8.0,
+    "completion_min": 7,
+    "completion_max": 13,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "dsflash41",
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "answer_format": "object",
+    "path": "results/deepinfra_new3_matched768_object_v1/dsflash41_sweep.jsonl",
+    "responses": 150,
+    "correct": 119,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1996,
+    "completion_median": 9.0,
+    "completion_min": 3,
+    "completion_max": 32,
+    "reasoning_reported": 150,
+    "reasoning_total": 1689,
+    "reasoning_positive_responses": 88,
+    "reasoning_text_responses": 88,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "positive provider-reported reasoning tokens",
+      "reasoning text returned"
+    ],
+    "model_alias": "glmflash",
+    "model": "zai-org/GLM-5.3-Flash",
+    "answer_format": "integer",
+    "path": "results/deepinfra_expansion_matched768_schema_v1/glmflash_sweep.jsonl",
+    "responses": 150,
+    "correct": 123,
+    "cutoffs": 21,
+    "invalid_answers": 21,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": [
+      "Reasoning off was requested but reasoning was observed; do not label this a thinking-off run.",
+      "Publication audit corrected index cutoffs from 0 using saved finish_reason=length. Result records were not edited."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 2724,
+    "completion_median": 15.5,
+    "completion_min": 7,
+    "completion_max": 32,
+    "reasoning_reported": 150,
+    "reasoning_total": 1681,
+    "reasoning_positive_responses": 91,
+    "reasoning_text_responses": 91,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)",
+      "positive provider-reported reasoning tokens",
+      "reasoning text returned"
+    ],
+    "model_alias": "glmflash",
+    "model": "zai-org/GLM-5.3-Flash",
+    "answer_format": "object",
+    "path": "results/deepinfra_glmflash_matched768_object_retry1/glmflash_sweep.jsonl",
+    "responses": 150,
+    "correct": 118,
+    "cutoffs": 26,
+    "invalid_answers": 26,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": [
+      "Reasoning off was requested but reasoning was observed; do not label this a thinking-off run."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1143,
+    "completion_median": 7.0,
+    "completion_min": 7,
+    "completion_max": 10,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "gemma",
+    "model": "gemma4-12b-qat-q4_0-matched768",
+    "answer_format": "integer",
+    "path": "results/gemma_matched768_schema_v1/gemma_sweep.jsonl",
+    "responses": 150,
+    "correct": 91,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": null,
+    "historical_notes": [
+      "Requires launch_source.py AND runner_source.py to reconstruct the executed settings. Launcher overrides the model, schema and protocol and sends enable_thinking=false. Its hash here is measured at indexing time, not verified against an original recorded hash. The original server launch command was not saved."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1894,
+    "completion_median": 12.0,
+    "completion_min": 12,
+    "completion_max": 15,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)",
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "gemma",
+    "model": "gemma4-12b-qat-q4_0-matched768",
+    "answer_format": "object",
+    "path": "results/gemma_matched768_object_v1/gemma_sweep.jsonl",
+    "responses": 150,
+    "correct": 99,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {},
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1893,
+    "completion_median": 3.0,
+    "completion_min": 2,
+    "completion_max": 32,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "gemma26",
+    "model": "google/gemma-4-26B-A4B-it",
+    "answer_format": "integer",
+    "path": "results/deepinfra_expansion_matched768_schema_v1/gemma26_sweep.jsonl",
+    "responses": 150,
+    "correct": 58,
+    "cutoffs": 52,
+    "invalid_answers": 52,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": [
+      "Publication audit corrected index cutoffs from 0 using saved finish_reason=length. Result records were not edited."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1234,
+    "completion_median": 8.0,
+    "completion_min": 7,
+    "completion_max": 9,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "gemma26",
+    "model": "google/gemma-4-26B-A4B-it",
+    "answer_format": "object",
+    "path": "results/deepinfra_all_matched768_object_v1/gemma26_sweep.jsonl",
+    "responses": 150,
+    "correct": 104,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 4712,
+    "completion_median": 32.0,
+    "completion_min": 2,
+    "completion_max": 32,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)"
+    ],
+    "model_alias": "haiku55",
+    "model": "claude-haiku-5-5",
+    "answer_format": "integer",
+    "path": "results/claude_matched768_haiku_v1/haiku55_sweep.jsonl",
+    "responses": 150,
+    "correct": 3,
+    "cutoffs": 147,
+    "invalid_answers": 147,
+    "request_options": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1386,
+    "completion_median": 9.0,
+    "completion_min": 8,
+    "completion_max": 12,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "haiku55",
+    "model": "claude-haiku-5-5",
+    "answer_format": "object",
+    "path": "results/claude_matched768_haiku_object_v1/haiku55_sweep.jsonl",
+    "responses": 150,
+    "correct": 124,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "historical_notes": [
+      "Historical protocol label is wrong; saved response_format establishes the object schema. Raw records are unchanged."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 300,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 2,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "hy4",
+    "model": "tencent/Hy4",
+    "answer_format": "integer",
+    "path": "results/deepinfra_new6_matched768_integer_v1/hy4_sweep.jsonl",
+    "responses": 150,
+    "correct": 113,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1137,
+    "completion_median": 7.0,
+    "completion_min": 6,
+    "completion_max": 13,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "hy4",
+    "model": "tencent/Hy4",
+    "answer_format": "object",
+    "path": "results/deepinfra_new6_matched768_object_v1/hy4_sweep.jsonl",
+    "responses": 150,
+    "correct": 119,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 750,
+    "completion_median": 5.0,
+    "completion_min": 5,
+    "completion_max": 5,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "inkling2m",
+    "model": "thinkingmachines/Inkling-2-Mini",
+    "answer_format": "integer",
+    "path": "results/deepinfra_new6_matched768_integer_retry1/inkling2m_sweep.jsonl",
+    "responses": 150,
+    "correct": 107,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1765,
+    "completion_median": 12.0,
+    "completion_min": 11,
+    "completion_max": 12,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)"
+    ],
+    "model_alias": "inkling2m",
+    "model": "thinkingmachines/Inkling-2-Mini",
+    "answer_format": "object",
+    "path": "results/deepinfra_new6_matched768_object_retry1/inkling2m_sweep.jsonl",
+    "responses": 150,
+    "correct": 108,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 4800,
+    "completion_median": 32.0,
+    "completion_min": 32,
+    "completion_max": 32,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)"
+    ],
+    "model_alias": "kimi",
+    "model": "moonshotai/Kimi-K3.1-Pro",
+    "answer_format": "integer",
+    "path": "results/deepinfra_kimi_matched768_integer_v1/kimi_sweep.jsonl",
+    "responses": 150,
+    "correct": 0,
+    "cutoffs": 150,
+    "invalid_answers": 150,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 902,
+    "completion_median": 6.0,
+    "completion_min": 6,
+    "completion_max": 7,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "kimi",
+    "model": "moonshotai/Kimi-K3.1-Pro",
+    "answer_format": "object",
+    "path": "results/deepinfra_kimi_matched768_object_v1/kimi_sweep.jsonl",
+    "responses": 150,
+    "correct": 137,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 300,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 2,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "scout",
+    "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "answer_format": "integer",
+    "path": "results/deepinfra_matched768_schema_v1/scout_sweep.jsonl",
+    "responses": 150,
+    "correct": 63,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": null,
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 353,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 3,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "mimo26pro",
+    "model": "XiaomiMiMo/MiMo-V2.6-Pro",
+    "answer_format": "integer",
+    "path": "results/deepinfra_new3_matched768_integer_v1/mimo26pro_sweep.jsonl",
+    "responses": 150,
+    "correct": 119,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1255,
+    "completion_median": 8.0,
+    "completion_min": 8,
+    "completion_max": 9,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "mimo26pro",
+    "model": "XiaomiMiMo/MiMo-V2.6-Pro",
+    "answer_format": "object",
+    "path": "results/deepinfra_new3_matched768_object_v1/mimo26pro_sweep.jsonl",
+    "responses": 150,
+    "correct": 109,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 358,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 3,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "mistral",
+    "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "answer_format": "integer",
+    "path": "results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl",
+    "responses": 150,
+    "correct": 88,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": null,
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 4239,
+    "completion_median": 32.0,
+    "completion_min": 8,
+    "completion_max": 32,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)",
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "mistral",
+    "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "answer_format": "object",
+    "path": "results/deepinfra_mistral_matched768_object_v1/mistral_sweep.jsonl",
+    "responses": 150,
+    "correct": 21,
+    "cutoffs": 114,
+    "invalid_answers": 114,
+    "request_options": {},
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 349,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 3,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "nemotron",
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+    "answer_format": "integer",
+    "path": "results/deepinfra_expansion_matched768_schema_v1/nemotron_sweep.jsonl",
+    "responses": 150,
+    "correct": 93,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1249,
+    "completion_median": 8.0,
+    "completion_min": 8,
+    "completion_max": 9,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "nemotron",
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+    "answer_format": "object",
+    "path": "results/deepinfra_all_matched768_object_v1/nemotron_sweep.jsonl",
+    "responses": 150,
+    "correct": 103,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 827,
+    "completion_median": 3.0,
+    "completion_min": 3,
+    "completion_max": 32,
+    "reasoning_reported": 150,
+    "reasoning_total": 416,
+    "reasoning_positive_responses": 13,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "positive provider-reported reasoning tokens"
+    ],
+    "model_alias": "opus55",
+    "model": "claude-opus-5-5",
+    "answer_format": "integer",
+    "path": "results/claude_matched768_integer_v1/opus55_sweep.jsonl",
+    "responses": 150,
+    "correct": 131,
+    "cutoffs": 13,
+    "invalid_answers": 13,
+    "request_options": {
+      "output_config": {
+        "effort": "low"
+      }
+    },
+    "historical_notes": [
+      "Low effort was requested; this is not a thinking-off condition."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1373,
+    "completion_median": 9.0,
+    "completion_min": 9,
+    "completion_max": 32,
+    "reasoning_reported": 150,
+    "reasoning_total": 32,
+    "reasoning_positive_responses": 1,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "positive provider-reported reasoning tokens"
+    ],
+    "model_alias": "opus55",
+    "model": "claude-opus-5-5",
+    "answer_format": "object",
+    "path": "results/claude_matched768_opus_object32_v1/opus55_sweep.jsonl",
+    "responses": 150,
+    "correct": 147,
+    "cutoffs": 1,
+    "invalid_answers": 1,
+    "request_options": {
+      "output_config": {
+        "effort": "low"
+      }
+    },
+    "historical_notes": [
+      "Low effort was requested; this is not a thinking-off condition."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 349,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 3,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen30",
+    "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "answer_format": "integer",
+    "path": "results/deepinfra_qwen30_matched768_schema_v1/qwen30_sweep.jsonl",
+    "responses": 150,
+    "correct": 90,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": null,
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 2813,
+    "completion_median": 9.0,
+    "completion_min": 7,
+    "completion_max": 32,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen30",
+    "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "answer_format": "object",
+    "path": "results/deepinfra_qwen30_matched768_object_retry1/qwen30_sweep.jsonl",
+    "responses": 150,
+    "correct": 50,
+    "cutoffs": 65,
+    "invalid_answers": 65,
+    "request_options": {},
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 347,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 3,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen35",
+    "model": "Qwen/Qwen3.5-397B-A17B",
+    "answer_format": "integer",
+    "path": "results/deepinfra_qwen35_matched768_integer_v1/qwen35_sweep.jsonl",
+    "responses": 150,
+    "correct": 128,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1698,
+    "completion_median": 11.0,
+    "completion_min": 11,
+    "completion_max": 12,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)",
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen35",
+    "model": "Qwen/Qwen3.5-397B-A17B",
+    "answer_format": "object",
+    "path": "results/deepinfra_qwen35_matched768_object_retry1/qwen35_sweep.jsonl",
+    "responses": 150,
+    "correct": 130,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 347,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 3,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen38",
+    "model": "Qwen/Qwen3.8-27B",
+    "answer_format": "integer",
+    "path": "results/deepinfra_expansion_matched768_schema_v1/qwen38_sweep.jsonl",
+    "responses": 150,
+    "correct": 117,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1668,
+    "completion_median": 11.0,
+    "completion_min": 7,
+    "completion_max": 12,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)",
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen38",
+    "model": "Qwen/Qwen3.8-27B",
+    "answer_format": "object",
+    "path": "results/deepinfra_qwen38_matched768_object_retry1/qwen38_sweep.jsonl",
+    "responses": 150,
+    "correct": 118,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 649,
+    "completion_median": 2.0,
+    "completion_min": 2,
+    "completion_max": 32,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen4max",
+    "model": "Qwen/Qwen4-Max",
+    "answer_format": "integer",
+    "path": "results/deepinfra_new6_matched768_integer_v1/qwen4max_sweep.jsonl",
+    "responses": 150,
+    "correct": 124,
+    "cutoffs": 10,
+    "invalid_answers": 10,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 966,
+    "completion_median": 6.0,
+    "completion_min": 6,
+    "completion_max": 8,
+    "reasoning_reported": 0,
+    "reasoning_total": null,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "reasoning counter missing on 150 responses"
+    ],
+    "model_alias": "qwen4max",
+    "model": "Qwen/Qwen4-Max",
+    "answer_format": "object",
+    "path": "results/deepinfra_new3_matched768_object_v1/qwen4max_sweep.jsonl",
+    "responses": 150,
+    "correct": 138,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "reasoning_effort": "none"
+    },
+    "historical_notes": []
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 4680,
+    "completion_median": 32.0,
+    "completion_min": 0,
+    "completion_max": 32,
+    "reasoning_reported": 149,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "thinking unconfirmed",
+    "note_reasons": [
+      "median completion tokens > 9 (screening rule, not proof)",
+      "reasoning counter missing on 1 responses"
+    ],
+    "model_alias": "sonnet55",
+    "model": "claude-sonnet-5-5",
+    "answer_format": "integer",
+    "path": "results/claude_matched768_integer_v1/sonnet55_sweep.jsonl",
+    "responses": 150,
+    "correct": 0,
+    "cutoffs": 146,
+    "invalid_answers": 149,
+    "request_options": {
+      "thinking": {
+        "type": "between_tools"
+      }
+    },
+    "historical_notes": [
+      "thinking.type=between_tools was requested; retain that exact label rather than inferring absence of internal reasoning."
+    ]
+  },
+  {
+    "completion_reported": 150,
+    "completion_total": 1399,
+    "completion_median": 9.0,
+    "completion_min": 8,
+    "completion_max": 12,
+    "reasoning_reported": 150,
+    "reasoning_total": 0,
+    "reasoning_positive_responses": 0,
+    "reasoning_text_responses": 0,
+    "thinking_note": "provider reports zero reasoning tokens",
+    "note_reasons": [],
+    "model_alias": "sonnet55",
+    "model": "claude-sonnet-5-5",
+    "answer_format": "object",
+    "path": "results/claude_matched768_sonnet_object_v1/sonnet55_sweep.jsonl",
+    "responses": 150,
+    "correct": 135,
+    "cutoffs": 0,
+    "invalid_answers": 0,
+    "request_options": {
+      "thinking": {
+        "type": "between_tools"
+      }
+    },
+    "historical_notes": [
+      "Historical protocol label is wrong; saved response_format establishes the object schema. Raw records are unchanged.",
+      "thinking.type=between_tools was requested; retain that exact label rather than inferring absence of internal reasoning."
+    ]
+  }
+]

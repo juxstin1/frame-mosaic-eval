@@ -1,0 +1,256 @@
+{
+  "protocol": "matched768_answer_object_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "models": {
+    "scout": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "qwen30": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "glmflash": "zai-org/GLM-5.3-Flash",
+    "gemma26": "google/gemma-4-26B-A4B-it",
+    "nemotron": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+    "qwen38": "Qwen/Qwen3.8-27B"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "request_options": {
+    "scout": {},
+    "qwen30": {},
+    "glmflash": {
+      "reasoning_effort": "none"
+    },
+    "gemma26": {
+      "reasoning_effort": "none"
+    },
+    "nemotron": {
+      "reasoning_effort": "none"
+    },
+    "qwen38": {
+      "reasoning_effort": "none"
+    }
+  },
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "server": null,
+  "provider_catalog": {
+    "scout": {
+      "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "parent": null,
+      "metadata": {
+        "description": "The Llama 4 collection of models are natively multimodal AI models that enable text and multimodal experiences. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding. Llama 4 Scout, a 17 billion parameter model with 16 experts",
+        "context_length": 327680,
+        "max_tokens": 327680,
+        "pricing": {
+          "input_tokens": 0.1,
+          "output_tokens": 0.3
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "qwen30": {
+      "id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "parent": null,
+      "metadata": {
+        "description": "Meet Qwen3-VL \u2014 the most powerful vision-language model in the Qwen series to date. This generation delivers comprehensive upgrades across the board: superior text understanding & generation, deeper visual perception & reasoning, extended context length, enhanced spatial and video dynamics comprehension, and stronger agent interaction capabilities.",
+        "context_length": 262144,
+        "max_tokens": 262144,
+        "pricing": {
+          "input_tokens": 0.15,
+          "output_tokens": 0.6
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "reasoning_effort"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "glmflash": {
+      "id": "zai-org/GLM-5.3-Flash",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "zai-org/GLM-5.3-Flash",
+      "parent": null,
+      "metadata": {
+        "description": "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while reducing compute overhead.",
+        "context_length": 1048576,
+        "max_tokens": 1048576,
+        "pricing": {
+          "input_tokens": 0.15,
+          "output_tokens": 0.5,
+          "cache_read_tokens": 0.03
+        },
+        "discount": 0.33,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "gemma26": {
+      "id": "google/gemma-4-26B-A4B-it",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "google/gemma-4-26B-A4B-it",
+      "parent": null,
+      "metadata": {
+        "description": "Efficient, MoE variant of Gemma 4. Gemma is a family of open models built by Google DeepMind. Gemma 4 models are multimodal, handling text and image input and generating text output.",
+        "context_length": 262144,
+        "max_tokens": 262144,
+        "pricing": {
+          "input_tokens": 0.07,
+          "output_tokens": 0.33999999999999997
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "nemotron": {
+      "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "parent": null,
+      "metadata": {
+        "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal model for agents that see, reason, and act. Its 120B-parameter Mixture-of-Experts design (12B active) understands text, images, documents, GUIs, and video, and adds reasoning and tool use on top.",
+        "context_length": 262144,
+        "max_tokens": 262144,
+        "pricing": {
+          "input_tokens": 0.15,
+          "output_tokens": 0.5,
+          "cache_read_tokens": 0.0199999995
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "qwen38": {
+      "id": "Qwen/Qwen3.8-27B",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "Qwen/Qwen3.8-27B",
+      "parent": null,
+      "metadata": {
+        "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be enabled or disabled.",
+        "context_length": 262144,
+        "max_tokens": 262144,
+        "pricing": {
+          "input_tokens": 0.2,
+          "output_tokens": 2.5,
+          "cache_read_tokens": 0.05
+        },
+        "discount": 0.25,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning_effort",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    }
+  },
+  "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+  "versions": {
+    "python": "3.12.0",
+    "pillow": "12.2.0",
+    "numpy": "2.3.5"
+  }
+}

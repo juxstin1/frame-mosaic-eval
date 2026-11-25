@@ -1,0 +1,74 @@
+{
+  "protocol": "matched768_integer_schema_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  },
+  "models": {
+    "gemma": "gemma4-12b-qat-q4_0-matched768"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "note": "Same 150 PNGs, system/user prompts and integer schema as hosted comparison. No extra smoke calls. Local thinking explicitly disabled.",
+  "runner_sha256": "4a09917d1d2f646a17aaff26dd037dc8811eb70867e12f517ab3586890b8a28a",
+  "server": {
+    "model_file": "gemma-4-12B-it-QAT-Q4_0.gguf",
+    "mmproj_file": "mmproj-gemma-4-12B-it-QAT-BF16.gguf",
+    "model_sha256": "f568ac5de71c8fcac5d5794494388ad94db9e18b4368ca897e21b30d2448eeec",
+    "mmproj_sha256": "d027f45ce5522f0e4dd2f777049c9a0cd3abbfddf7f4efe5ade22610d9b9ab54",
+    "server_exe_sha256": "1b095358c1e5e84c9360d7b0f0f944c928b084996237bb0a96874b4aaf3cb8bb",
+    "version": [
+      "version: 9555 (daf6bc9f2)",
+      "built with Clang 19.1.5 for Windows x86_64"
+    ],
+    "alias": "gemma4-12b-qat-q4_0-matched768",
+    "port": 8098,
+    "context": 8192,
+    "image_max_tokens": 256,
+    "device": "Vulkan0",
+    "quantization": "QAT Q4_0",
+    "projector_precision": "BF16",
+    "thinking": false,
+    "served_model_ids": [
+      "gemma4-12b-qat-q4_0-matched768"
+    ]
+  },
+  "thinking": false
+}

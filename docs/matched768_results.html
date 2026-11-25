@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frame Mosaic: matched-768 results</title><style>
+body{max-width:1300px;margin:40px auto;padding:0 24px;background:#f8fafc;color:#172b4d;font:16px/1.6 system-ui}
+h1{font-size:2.4rem;line-height:1.15}h2{margin-top:2.5rem}a{color:#235b91}
+.table{overflow:auto}table{border-collapse:collapse;background:white;font-size:14px;width:100%}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #dce3eb}th{background:#e9eff5}
+img{width:100%;height:auto;margin:20px 0}pre{padding:18px;background:#e9eff5}
+</style><main><h1>Matched-768: answer format comparison</h1>
+<p>35 complete runs; 5,250 scored responses. Each run uses the same 150 cases:</p>
+<p>three tasks, five grid sizes (4, 9, 16, 36, 64), labels off/on, five sequences per cell.</p>
+<p>Images are 768 x 768; the output cap is 32 tokens. Cutoffs and invalid answers count as wrong.</p>
+<p>This compares deployed configurations, not matched reasoning compute or isolated vision accuracy.</p>
+<p>Claude omits temperature and uses model-specific thinking controls; Opus requests low effort.</p>
+<p>Other selected runs use temperature 0. Requested reasoning controls do not prove reasoning was disabled.</p>
+<h2>Reading the notes</h2>
+<p><strong>&quot;thinking unconfirmed&quot;</strong> flags any run with median completion tokens &gt;9, any positive reported reasoning</p>
+<p>tokens/text, or an unavailable reasoning counter. The &gt;9 threshold is a conservative screening rule,</p>
+<p>not proof of hidden reasoning: a wrapper or a repeated digit string can also use more tokens.</p>
+<p>A zero is shown only when the provider explicitly reports it; missing counters stay missing.</p>
+<p>Otherwise the note is &quot;provider reports zero reasoning tokens&quot;, not a claim about unobserved computation.</p>
+<p>Qwen4-Max has no reasoning-token counter on either format. Kimi explicitly reports zero on all 300</p>
+<p>responses; its integer run nevertheless reaches 32 tokens on all 150 calls. These scores describe</p>
+<p>the requested output protocol, not a verified all-model thinking-off comparison.</p>
+<h2>Scores and token audit</h2>
+<p>Completion columns include final output and any reasoning counted by the provider. Claude uses</p>
+<p>output_tokens and output_tokens_details.thinking_tokens; other APIs use completion_tokens and</p>
+<p>completion_tokens_details.reasoning_tokens. Reasoning totals cover only reported counters.</p>
+<div class="table"><table><thead><tr><th>Model</th><th>Format</th><th>Correct /150</th><th>Cutoffs</th><th>Completion median [min-max]</th><th>Completion total</th><th>Reasoning total</th><th>Counter present /150</th><th>Positive reasoning calls</th><th>Note</th></tr></thead><tbody>
+<tr><td>DeepSeek V4.1 Flash</td><td>integer</td><td>113</td><td>0</td><td>2 [2-2]</td><td>300</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>DeepSeek V4.1 Flash</td><td>object</td><td>119</td><td>0</td><td>8 [7-13]</td><td>1145</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>GLM-5.3-Flash</td><td>integer</td><td>123</td><td>21</td><td>9 [3-32]</td><td>1996</td><td>1689</td><td>150</td><td>88</td><td>thinking unconfirmed: positive provider-reported reasoning tokens; reasoning text returned</td></tr>
+<tr><td>GLM-5.3-Flash</td><td>object</td><td>118</td><td>26</td><td>15.5 [7-32]</td><td>2724</td><td>1681</td><td>150</td><td>91</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof); positive provider-reported reasoning tokens; reasoning text returned</td></tr>
+<tr><td>Gemma 4 12B (local)</td><td>integer</td><td>91</td><td>0</td><td>7 [7-10]</td><td>1143</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Gemma 4 12B (local)</td><td>object</td><td>99</td><td>0</td><td>12 [12-15]</td><td>1894</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof); reasoning counter missing on 150 responses</td></tr>
+<tr><td>Gemma 4 26B</td><td>integer</td><td>58</td><td>52</td><td>3 [2-32]</td><td>1893</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Gemma 4 26B</td><td>object</td><td>104</td><td>0</td><td>8 [7-9]</td><td>1234</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Haiku 5.5</td><td>integer</td><td>3</td><td>147</td><td>32 [2-32]</td><td>4712</td><td>0</td><td>150</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof)</td></tr>
+<tr><td>Haiku 5.5</td><td>object</td><td>124</td><td>0</td><td>9 [8-12]</td><td>1386</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Hy4</td><td>integer</td><td>113</td><td>0</td><td>2 [2-2]</td><td>300</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Hy4</td><td>object</td><td>119</td><td>0</td><td>7 [6-13]</td><td>1137</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Inkling 2 Mini</td><td>integer</td><td>107</td><td>0</td><td>5 [5-5]</td><td>750</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Inkling 2 Mini</td><td>object</td><td>108</td><td>0</td><td>12 [11-12]</td><td>1765</td><td>0</td><td>150</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof)</td></tr>
+<tr><td>Kimi K3.1 Pro</td><td>integer</td><td>0</td><td>150</td><td>32 [32-32]</td><td>4800</td><td>0</td><td>150</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof)</td></tr>
+<tr><td>Kimi K3.1 Pro</td><td>object</td><td>137</td><td>0</td><td>6 [6-7]</td><td>902</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Llama 4 Scout</td><td>integer</td><td>63</td><td>0</td><td>2 [2-2]</td><td>300</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>MiMo V2.6 Pro</td><td>integer</td><td>119</td><td>0</td><td>2 [2-3]</td><td>353</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>MiMo V2.6 Pro</td><td>object</td><td>109</td><td>0</td><td>8 [8-9]</td><td>1255</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Mistral Small 3.2</td><td>integer</td><td>88</td><td>0</td><td>2 [2-3]</td><td>358</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Mistral Small 3.2</td><td>object</td><td>21</td><td>114</td><td>32 [8-32]</td><td>4239</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof); reasoning counter missing on 150 responses</td></tr>
+<tr><td>Nemotron 3.5 VL</td><td>integer</td><td>93</td><td>0</td><td>2 [2-3]</td><td>349</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Nemotron 3.5 VL</td><td>object</td><td>103</td><td>0</td><td>8 [8-9]</td><td>1249</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+<tr><td>Opus 5.5</td><td>integer</td><td>131</td><td>13</td><td>3 [3-32]</td><td>827</td><td>416</td><td>150</td><td>13</td><td>thinking unconfirmed: positive provider-reported reasoning tokens</td></tr>
+<tr><td>Opus 5.5</td><td>object</td><td>147</td><td>1</td><td>9 [9-32]</td><td>1373</td><td>32</td><td>150</td><td>1</td><td>thinking unconfirmed: positive provider-reported reasoning tokens</td></tr>
+<tr><td>Qwen3-VL-30B</td><td>integer</td><td>90</td><td>0</td><td>2 [2-3]</td><td>349</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen3-VL-30B</td><td>object</td><td>50</td><td>65</td><td>9 [7-32]</td><td>2813</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen3.5-397B</td><td>integer</td><td>128</td><td>0</td><td>2 [2-3]</td><td>347</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen3.5-397B</td><td>object</td><td>130</td><td>0</td><td>11 [11-12]</td><td>1698</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof); reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen3.8-27B</td><td>integer</td><td>117</td><td>0</td><td>2 [2-3]</td><td>347</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen3.8-27B</td><td>object</td><td>118</td><td>0</td><td>11 [7-12]</td><td>1668</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof); reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen4-Max</td><td>integer</td><td>124</td><td>10</td><td>2 [2-32]</td><td>649</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Qwen4-Max</td><td>object</td><td>138</td><td>0</td><td>6 [6-8]</td><td>966</td><td>missing</td><td>0</td><td>0</td><td>thinking unconfirmed: reasoning counter missing on 150 responses</td></tr>
+<tr><td>Sonnet 5.5</td><td>integer</td><td>0</td><td>146</td><td>32 [0-32]</td><td>4680</td><td>0</td><td>149</td><td>0</td><td>thinking unconfirmed: median completion tokens &gt; 9 (screening rule, not proof); reasoning counter missing on 1 responses</td></tr>
+<tr><td>Sonnet 5.5</td><td>object</td><td>135</td><td>0</td><td>9 [8-12]</td><td>1399</td><td>0</td><td>150</td><td>0</td><td>provider reports zero reasoning tokens</td></tr>
+</tbody></table></div>
+<h2>Charts</h2>
+<img alt="Correct answers by format" src="../figures/matched768_formats.png">
+<img alt="Change in correct answers with the wrapper" src="../figures/matched768_format_delta.png">
+<img alt="Wrapper accuracy by task and labels" src="../figures/matched768_wrapper_tasks.png">
+<h2>Incomplete cells and retries</h2>
+<p>Scout wrapper and both Gemini 3.7 Flash formats have no selected complete 150-case run.</p>
+<p>Incomplete attempts are not scored as 150-case results. Retries and earlier batches stay separate.</p>
+<p>Selection uses the index, not the highest observed score, and no attempts are concatenated.</p>
+<p>For the new models, the earliest verified complete run per format is selected. Qwen4-Max wrapper</p>
+<p>and both DeepSeek V4.1 Flash / MiMo formats come from new3; their later new6 attempts failed.</p>
+<p>The selected paths below make this explicit.</p>
+<h3>Gemini usage from incomplete attempts</h3>
+<div class="table"><table><thead><tr><th>Attempt</th><th>Responses</th><th>Completion total</th><th>Reasoning total</th><th>Positive reasoning calls</th><th>Reasoning text calls</th></tr></thead><tbody>
+<tr><td><a href="../results/deepinfra_new6_matched768_integer_v1/gemini37f_sweep.jsonl">results/deepinfra_new6_matched768_integer_v1/gemini37f_sweep.jsonl</a></td><td>60</td><td>1702</td><td>1659</td><td>60</td><td>0</td></tr>
+<tr><td><a href="../results/deepinfra_new6_matched768_object_retry1/gemini37f_sweep.jsonl">results/deepinfra_new6_matched768_object_retry1/gemini37f_sweep.jsonl</a></td><td>2</td><td>56</td><td>53</td><td>2</td><td>0</td></tr>
+<tr><td><a href="../results/deepinfra_new6_matched768_object_v1/gemini37f_sweep.jsonl">results/deepinfra_new6_matched768_object_v1/gemini37f_sweep.jsonl</a></td><td>15</td><td>429</td><td>421</td><td>15</td><td>0</td></tr>
+</tbody></table></div>
+<p>These are separate failed attempts, not independent additional benchmark cases.</p>
+<p>Empty reasoning_content does not establish zero reasoning usage.</p>
+<h2>Provenance and scope</h2>
+<p>Only table_cells.selected_path in analysis/run_index.json supplies the main scores. This generator</p>
+<p>checks result hashes, archived runner/config hashes, 150 unique cases, model identities, image hashes,</p>
+<p>questions, system prompts, truth, input resolution, cap, temperature and raw-answer scoring.</p>
+<p>Historical protocol-name errors remain in the raw files; saved response_format determines the actual format.</p>
+<p>Gemma&#x27;s 91/150 integer run requires both runner_source.py and launch_source.py from its result folder.</p>
+<p>The launcher overrides runner settings. Its hash was recorded at indexing, not in the original manifest.</p>
+<p>The original server launch command was not saved; recorded settings and binary/model hashes remain.</p>
+<p>Two Gemma server logs had private absolute paths redacted after the run. The index records the paths,</p>
+<p>redaction scope and current hashes; these logs are not untouched originals. Result JSONL files were not edited.</p>
+<p>The 4096-token thinking round, the earlier Opus 148/150 run at cap 4096, raw text-only tag tests,</p>
+<p>smoke tests and failed attempts are excluded from the two main format tables.</p>
+<p>Five sequences per cell support exploratory descriptions, not a precise model ranking.</p>
+<p>Identical input pixels do not imply equal provider image tokens or equal internal preprocessing.</p>
+<h2>Reproduce</h2>
+<pre><code>
+python -B -m analysis.results_page
+
+</code></pre>
+<p>Reads existing logs only. Writes this Markdown page, docs/matched768_results.html,</p>
+<p>analysis/matched768_tokens.json and three figures. No API keys, GPU or model calls are required.</p>
+<h2>Selected source files</h2>
+<div class="table"><table><thead><tr><th>Model</th><th>Format</th><th>Source</th></tr></thead><tbody>
+<tr><td>DeepSeek V4.1 Flash</td><td>integer</td><td><a href="../results/deepinfra_new3_matched768_integer_v1/dsflash41_sweep.jsonl">results/deepinfra_new3_matched768_integer_v1/dsflash41_sweep.jsonl</a></td></tr>
+<tr><td>DeepSeek V4.1 Flash</td><td>object</td><td><a href="../results/deepinfra_new3_matched768_object_v1/dsflash41_sweep.jsonl">results/deepinfra_new3_matched768_object_v1/dsflash41_sweep.jsonl</a></td></tr>
+<tr><td>GLM-5.3-Flash</td><td>integer</td><td><a href="../results/deepinfra_expansion_matched768_schema_v1/glmflash_sweep.jsonl">results/deepinfra_expansion_matched768_schema_v1/glmflash_sweep.jsonl</a></td></tr>
+<tr><td>GLM-5.3-Flash</td><td>object</td><td><a href="../results/deepinfra_glmflash_matched768_object_retry1/glmflash_sweep.jsonl">results/deepinfra_glmflash_matched768_object_retry1/glmflash_sweep.jsonl</a></td></tr>
+<tr><td>Gemma 4 12B (local)</td><td>integer</td><td><a href="../results/gemma_matched768_schema_v1/gemma_sweep.jsonl">results/gemma_matched768_schema_v1/gemma_sweep.jsonl</a></td></tr>
+<tr><td>Gemma 4 12B (local)</td><td>object</td><td><a href="../results/gemma_matched768_object_v1/gemma_sweep.jsonl">results/gemma_matched768_object_v1/gemma_sweep.jsonl</a></td></tr>
+<tr><td>Gemma 4 26B</td><td>integer</td><td><a href="../results/deepinfra_expansion_matched768_schema_v1/gemma26_sweep.jsonl">results/deepinfra_expansion_matched768_schema_v1/gemma26_sweep.jsonl</a></td></tr>
+<tr><td>Gemma 4 26B</td><td>object</td><td><a href="../results/deepinfra_all_matched768_object_v1/gemma26_sweep.jsonl">results/deepinfra_all_matched768_object_v1/gemma26_sweep.jsonl</a></td></tr>
+<tr><td>Haiku 5.5</td><td>integer</td><td><a href="../results/claude_matched768_haiku_v1/haiku55_sweep.jsonl">results/claude_matched768_haiku_v1/haiku55_sweep.jsonl</a></td></tr>
+<tr><td>Haiku 5.5</td><td>object</td><td><a href="../results/claude_matched768_haiku_object_v1/haiku55_sweep.jsonl">results/claude_matched768_haiku_object_v1/haiku55_sweep.jsonl</a></td></tr>
+<tr><td>Hy4</td><td>integer</td><td><a href="../results/deepinfra_new6_matched768_integer_v1/hy4_sweep.jsonl">results/deepinfra_new6_matched768_integer_v1/hy4_sweep.jsonl</a></td></tr>
+<tr><td>Hy4</td><td>object</td><td><a href="../results/deepinfra_new6_matched768_object_v1/hy4_sweep.jsonl">results/deepinfra_new6_matched768_object_v1/hy4_sweep.jsonl</a></td></tr>
+<tr><td>Inkling 2 Mini</td><td>integer</td><td><a href="../results/deepinfra_new6_matched768_integer_retry1/inkling2m_sweep.jsonl">results/deepinfra_new6_matched768_integer_retry1/inkling2m_sweep.jsonl</a></td></tr>
+<tr><td>Inkling 2 Mini</td><td>object</td><td><a href="../results/deepinfra_new6_matched768_object_retry1/inkling2m_sweep.jsonl">results/deepinfra_new6_matched768_object_retry1/inkling2m_sweep.jsonl</a></td></tr>
+<tr><td>Kimi K3.1 Pro</td><td>integer</td><td><a href="../results/deepinfra_kimi_matched768_integer_v1/kimi_sweep.jsonl">results/deepinfra_kimi_matched768_integer_v1/kimi_sweep.jsonl</a></td></tr>
+<tr><td>Kimi K3.1 Pro</td><td>object</td><td><a href="../results/deepinfra_kimi_matched768_object_v1/kimi_sweep.jsonl">results/deepinfra_kimi_matched768_object_v1/kimi_sweep.jsonl</a></td></tr>
+<tr><td>Llama 4 Scout</td><td>integer</td><td><a href="../results/deepinfra_matched768_schema_v1/scout_sweep.jsonl">results/deepinfra_matched768_schema_v1/scout_sweep.jsonl</a></td></tr>
+<tr><td>MiMo V2.6 Pro</td><td>integer</td><td><a href="../results/deepinfra_new3_matched768_integer_v1/mimo26pro_sweep.jsonl">results/deepinfra_new3_matched768_integer_v1/mimo26pro_sweep.jsonl</a></td></tr>
+<tr><td>MiMo V2.6 Pro</td><td>object</td><td><a href="../results/deepinfra_new3_matched768_object_v1/mimo26pro_sweep.jsonl">results/deepinfra_new3_matched768_object_v1/mimo26pro_sweep.jsonl</a></td></tr>
+<tr><td>Mistral Small 3.2</td><td>integer</td><td><a href="../results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl">results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl</a></td></tr>
+<tr><td>Mistral Small 3.2</td><td>object</td><td><a href="../results/deepinfra_mistral_matched768_object_v1/mistral_sweep.jsonl">results/deepinfra_mistral_matched768_object_v1/mistral_sweep.jsonl</a></td></tr>
+<tr><td>Nemotron 3.5 VL</td><td>integer</td><td><a href="../results/deepinfra_expansion_matched768_schema_v1/nemotron_sweep.jsonl">results/deepinfra_expansion_matched768_schema_v1/nemotron_sweep.jsonl</a></td></tr>
+<tr><td>Nemotron 3.5 VL</td><td>object</td><td><a href="../results/deepinfra_all_matched768_object_v1/nemotron_sweep.jsonl">results/deepinfra_all_matched768_object_v1/nemotron_sweep.jsonl</a></td></tr>
+<tr><td>Opus 5.5</td><td>integer</td><td><a href="../results/claude_matched768_integer_v1/opus55_sweep.jsonl">results/claude_matched768_integer_v1/opus55_sweep.jsonl</a></td></tr>
+<tr><td>Opus 5.5</td><td>object</td><td><a href="../results/claude_matched768_opus_object32_v1/opus55_sweep.jsonl">results/claude_matched768_opus_object32_v1/opus55_sweep.jsonl</a></td></tr>
+<tr><td>Qwen3-VL-30B</td><td>integer</td><td><a href="../results/deepinfra_qwen30_matched768_schema_v1/qwen30_sweep.jsonl">results/deepinfra_qwen30_matched768_schema_v1/qwen30_sweep.jsonl</a></td></tr>
+<tr><td>Qwen3-VL-30B</td><td>object</td><td><a href="../results/deepinfra_qwen30_matched768_object_retry1/qwen30_sweep.jsonl">results/deepinfra_qwen30_matched768_object_retry1/qwen30_sweep.jsonl</a></td></tr>
+<tr><td>Qwen3.5-397B</td><td>integer</td><td><a href="../results/deepinfra_qwen35_matched768_integer_v1/qwen35_sweep.jsonl">results/deepinfra_qwen35_matched768_integer_v1/qwen35_sweep.jsonl</a></td></tr>
+<tr><td>Qwen3.5-397B</td><td>object</td><td><a href="../results/deepinfra_qwen35_matched768_object_retry1/qwen35_sweep.jsonl">results/deepinfra_qwen35_matched768_object_retry1/qwen35_sweep.jsonl</a></td></tr>
+<tr><td>Qwen3.8-27B</td><td>integer</td><td><a href="../results/deepinfra_expansion_matched768_schema_v1/qwen38_sweep.jsonl">results/deepinfra_expansion_matched768_schema_v1/qwen38_sweep.jsonl</a></td></tr>
+<tr><td>Qwen3.8-27B</td><td>object</td><td><a href="../results/deepinfra_qwen38_matched768_object_retry1/qwen38_sweep.jsonl">results/deepinfra_qwen38_matched768_object_retry1/qwen38_sweep.jsonl</a></td></tr>
+<tr><td>Qwen4-Max</td><td>integer</td><td><a href="../results/deepinfra_new6_matched768_integer_v1/qwen4max_sweep.jsonl">results/deepinfra_new6_matched768_integer_v1/qwen4max_sweep.jsonl</a></td></tr>
+<tr><td>Qwen4-Max</td><td>object</td><td><a href="../results/deepinfra_new3_matched768_object_v1/qwen4max_sweep.jsonl">results/deepinfra_new3_matched768_object_v1/qwen4max_sweep.jsonl</a></td></tr>
+<tr><td>Sonnet 5.5</td><td>integer</td><td><a href="../results/claude_matched768_integer_v1/sonnet55_sweep.jsonl">results/claude_matched768_integer_v1/sonnet55_sweep.jsonl</a></td></tr>
+<tr><td>Sonnet 5.5</td><td>object</td><td><a href="../results/claude_matched768_sonnet_object_v1/sonnet55_sweep.jsonl">results/claude_matched768_sonnet_object_v1/sonnet55_sweep.jsonl</a></td></tr>
+</tbody></table></div></main></html>

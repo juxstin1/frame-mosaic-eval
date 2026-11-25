@@ -1,0 +1,178 @@
+{
+  "protocol": "matched768_answer_object_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "models": {
+    "qwen4max": "Qwen/Qwen4-Max",
+    "dsflash41": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "mimo26pro": "XiaomiMiMo/MiMo-V2.6-Pro"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "request_options": {
+    "qwen4max": {
+      "reasoning_effort": "none"
+    },
+    "dsflash41": {
+      "reasoning_effort": "none"
+    },
+    "mimo26pro": {
+      "reasoning_effort": "none"
+    }
+  },
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "server": null,
+  "provider_catalog": {
+    "qwen4max": {
+      "id": "Qwen/Qwen4-Max",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "Qwen/Qwen4-Max",
+      "parent": null,
+      "metadata": {
+        "description": "Qwen's next-generation flagship multimodal model, combining text, image and video understanding with deep reasoning for coding, office work and complex agentic tasks.",
+        "context_length": 1000000,
+        "max_tokens": 1000000,
+        "pricing": {
+          "input_tokens": 1.4129999999999998,
+          "output_tokens": 4.24,
+          "cache_read_tokens": 0.07100000009999999
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "dsflash41": {
+      "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "parent": null,
+      "metadata": {
+        "description": "DeepSeek-V4.1-Flash-1017 is a minor update to DeepSeek-V4.1-Flash, delivering substantial improvements across reasoning, coding, agentic tasks, and visual benchmarks. Alongside these gains, the model reduces task execution time and output length, enabling users to complete tasks faster and at lower cost and advancing the performance\u2013cost Pareto frontier across multiple agent harnesses.",
+        "context_length": 1048576,
+        "max_tokens": 1048576,
+        "pricing": {
+          "input_tokens": 0.2,
+          "output_tokens": 0.6,
+          "cache_read_tokens": 0.006
+        },
+        "discount": 0.51,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    },
+    "mimo26pro": {
+      "id": "XiaomiMiMo/MiMo-V2.6-Pro",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "XiaomiMiMo/MiMo-V2.6-Pro",
+      "parent": null,
+      "metadata": {
+        "description": "MiMo-V2.6-Pro is the flagship of Xiaomi's MiMo-V2.6 series: a sparse Mixture-of-Experts model with 1.02T total and 42B activated parameters, natively omnimodal across text, image, video and audio, with a 1M-token context window. Trained with large-scale mixed reinforcement learning and groupwise agentic grading, it is built for demanding agentic work including long-horizon coding, multi-tool agents and cybersecurity tasks.",
+        "context_length": 1048576,
+        "max_tokens": 1048576,
+        "pricing": {
+          "input_tokens": 0.43,
+          "output_tokens": 0.87,
+          "cache_read_tokens": 0.0035999987000000003
+        },
+        "discount": 0.1,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    }
+  },
+  "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+  "versions": {
+    "python": "3.12.0",
+    "pillow": "12.2.0",
+    "numpy": "2.3.5"
+  },
+  "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+  "configured_model_aliases": [
+    "qwen4max",
+    "dsflash41",
+    "mimo26pro"
+  ],
+  "output_cap_overrides": {
+    "qwen4max": 32,
+    "dsflash41": 32,
+    "mimo26pro": 32
+  }
+}

@@ -55,3 +55,50 @@ half-patch margin so every tile edge falls mid-patch; one mosaic or separate ima
 
 Our contribution: the same kind of capacity curve for *time* in an image, with per-position heatmaps.
 Comparing one mosaic with separate images is future work.
+
+## Matched-768 answer-format comparison
+
+See the [indexed results and token audit](analysis/matched768_results.md),
+[HTML results page](docs/matched768_results.html), and [run index](analysis/run_index.json).
+The page compares bare integer and `{"answer": N}` formats at a 32-token cap.
+It includes the three comparison charts in `figures/`; the earlier `matched768.md`
+and `wrapper768.md` summaries cover narrower historical subsets.
+
+Regenerate this page and its charts without model calls:
+
+```sh
+python -B -m analysis.results_page
+```
+
+The generator validates selected result hashes and archived code/config snapshots,
+checks identical cases and input hashes, and rechecks scores against raw answers.
+Only `table_cells.selected_path` contributes to the main tables. Failed attempts,
+retries, and the separate 4096-token thinking round are not pooled into them.
+
+A row marked **thinking unconfirmed** has median completion tokens above 9,
+positive reported reasoning tokens/text, or an unavailable reasoning counter.
+The length threshold is a screening rule, not proof of hidden thinking. Repeated
+digits and the wrapper itself also consume tokens. Explicit provider-reported zero
+is distinguished from missing usage fields; no table claims universally disabled thinking.
+
+### Historical run provenance
+
+The Gemma 12B bare-integer result (91/150) needs **both**
+[`runner_source.py`](results/gemma_matched768_schema_v1/runner_source.py) and
+[`launch_source.py`](results/gemma_matched768_schema_v1/launch_source.py)
+to reconstruct what ran: the launcher overrides settings before invoking the runner.
+The runner hash is in the original manifest. The launcher hash was recorded later,
+at indexing; it is not an original launch-time attestation. The original server launch
+command was not saved, although settings and binary/model hashes were retained.
+
+Two server logs had private absolute paths redacted **after** the wrapper run:
+`logs/server/gemma_object_20261124-223126.json` and
+`logs/server/gemma_object_20261124-223126.log.err`. Their current hashes and redaction
+scope are recorded under `artifact_redactions` in the run index. They are redacted
+artifacts, not untouched originals. No result JSONL records were changed.
+
+The active sweep entry point is `runner/matched_768.py`; new DeepInfra aliases use
+`runner/models.toml`. Existing built-in aliases retain the runner's archived defaults;
+the config file does not override those built-ins. Per-run snapshots document the exact
+code and settings used. Provider preprocessing and reasoning controls differ, so this
+is an exploratory comparison of deployed configurations, not matched reasoning compute.

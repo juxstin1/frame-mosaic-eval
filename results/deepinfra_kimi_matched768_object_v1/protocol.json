@@ -1,0 +1,108 @@
+{
+  "protocol": "matched768_answer_object_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "models": {
+    "kimi": "moonshotai/Kimi-K3.1-Pro"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "request_options": {
+    "kimi": {
+      "reasoning_effort": "none"
+    }
+  },
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "server": null,
+  "provider_catalog": {
+    "kimi": {
+      "id": "moonshotai/Kimi-K3.1-Pro",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "moonshotai/Kimi-K3.1-Pro",
+      "parent": null,
+      "metadata": {
+        "description": "Kimi K3.1 Pro is an open-weight, natively multimodal agentic model, post-trained from Kimi K3 with large-scale joint reinforcement learning across hundreds of downstream domains, it is the first model in the K3.1 series. With a 1-million-token context window, Kimi K3.1 Pro delivers substantial improvements in coding, 3D creation, financial research, factual accuracy, and other agentic capabilities.",
+        "context_length": 1048576,
+        "max_tokens": 1048576,
+        "pricing": {
+          "input_tokens": 2.0,
+          "output_tokens": 10.0,
+          "cache_read_tokens": 0.2
+        },
+        "discount": 0.05,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    }
+  },
+  "runner_sha256": "cdcaae6589d6a1a4f4fea6bd52e3ebbebfd68fc2d60f3c90bcda0534876aea99",
+  "versions": {
+    "python": "3.12.0",
+    "pillow": "12.2.0",
+    "numpy": "2.3.5"
+  },
+  "config_sha256": "b8ba8bafde3d4bdbcd8ee1d4184313faf69e4d0e7edeee793a66c8950035c31d",
+  "configured_model_aliases": [
+    "kimi"
+  ],
+  "output_cap_overrides": {
+    "kimi": 32
+  }
+}

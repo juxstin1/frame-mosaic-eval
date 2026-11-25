@@ -1,0 +1,97 @@
+{
+  "protocol": "matched768_answer_object_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "models": {
+    "qwen30": "Qwen/Qwen3-VL-30B-A3B-Instruct"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "request_options": {
+    "qwen30": {}
+  },
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "server": null,
+  "provider_catalog": {
+    "qwen30": {
+      "id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "parent": null,
+      "metadata": {
+        "description": "Meet Qwen3-VL \u2014 the most powerful vision-language model in the Qwen series to date. This generation delivers comprehensive upgrades across the board: superior text understanding & generation, deeper visual perception & reasoning, extended context length, enhanced spatial and video dynamics comprehension, and stronger agent interaction capabilities.",
+        "context_length": 262144,
+        "max_tokens": 262144,
+        "pricing": {
+          "input_tokens": 0.15,
+          "output_tokens": 0.6
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "reasoning_effort"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    }
+  },
+  "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+  "versions": {
+    "python": "3.12.0",
+    "pillow": "12.2.0",
+    "numpy": "2.3.5"
+  }
+}

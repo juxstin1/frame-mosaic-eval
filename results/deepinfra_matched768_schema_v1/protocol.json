@@ -1,0 +1,52 @@
+{
+  "protocol": "matched768_integer_schema_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  },
+  "models": {
+    "mistral": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "scout": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "smoke_per_model": 12,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "note": "Both models get identical PNG hashes and prompts. Native preprocessing remains model-specific. Smoke sequence 99 excluded from sweep. Numeric format gate allows one trailing period; it does not gate on accuracy.",
+  "runner_sha256": "8f8126cef7d9a23310816ba09775ae5192daba7f9f90c703ae81c2fb53db2534"
+}

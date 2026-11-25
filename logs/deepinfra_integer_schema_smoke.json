@@ -1,0 +1,190 @@
+[
+  {
+    "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "task": "moving_dot",
+    "n": 64,
+    "labels": false,
+    "seq_index": 99,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "integer_answer",
+        "strict": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+    "prompt": "This image is a grid of 64 consecutive frames from a video (8 rows x 8 columns). Read the grid left to right, top to bottom: frame 1 is the first cell, frame 64 the last.\n\nA dot moves across the frames. At some frame it changes colour from blue to red and stays red. What is the number of the first frame in which the dot is red? Answer with the frame number only.",
+    "response": {
+      "service_tier": "default",
+      "id": "chatcmpl-R7B48ZC8dIdtCRBLxMwm1lA7",
+      "object": "chat.completion",
+      "created": 1795569010,
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "64",
+            "reasoning_content": null,
+            "name": null,
+            "tool_calls": []
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1570,
+        "total_tokens": 1572,
+        "completion_tokens": 2,
+        "estimated_cost": 0.00015760000000000004,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "task": "tile_probe",
+    "n": 4,
+    "labels": false,
+    "seq_index": 99,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "integer_answer",
+        "strict": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+    "prompt": "This image is a grid of 4 consecutive frames from a video (2 rows x 2 columns). Read the grid left to right, top to bottom: frame 1 is the first cell, frame 4 the last.\n\nExactly one frame contains a red star. What is the number of that frame? Answer with the frame number only.",
+    "response": {
+      "service_tier": "default",
+      "id": "chatcmpl-RAmxQqo5E2Vff7patGcYM6am",
+      "object": "chat.completion",
+      "created": 1795569011,
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "3",
+            "reasoning_content": null,
+            "name": null,
+            "tool_calls": []
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1550,
+        "total_tokens": 1552,
+        "completion_tokens": 2,
+        "estimated_cost": 0.00015560000000000001,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "task": "moving_dot",
+    "n": 64,
+    "labels": false,
+    "seq_index": 99,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "integer_answer",
+        "strict": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+    "prompt": "This image is a grid of 64 consecutive frames from a video (8 rows x 8 columns). Read the grid left to right, top to bottom: frame 1 is the first cell, frame 64 the last.\n\nA dot moves across the frames. At some frame it changes colour from blue to red and stays red. What is the number of the first frame in which the dot is red? Answer with the frame number only.",
+    "response": {
+      "service_tier": "default",
+      "id": "chatcmpl-RU5fPVV5mFGQOqx1eoQLqDRT",
+      "object": "chat.completion",
+      "created": 1795569012,
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "55",
+            "reasoning_content": null,
+            "name": null,
+            "tool_calls": []
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 923,
+        "total_tokens": 926,
+        "completion_tokens": 3,
+        "estimated_cost": 6.9825e-05,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "task": "tile_probe",
+    "n": 4,
+    "labels": false,
+    "seq_index": 99,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "integer_answer",
+        "strict": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+    "prompt": "This image is a grid of 4 consecutive frames from a video (2 rows x 2 columns). Read the grid left to right, top to bottom: frame 1 is the first cell, frame 4 the last.\n\nExactly one frame contains a red star. What is the number of that frame? Answer with the frame number only.",
+    "response": {
+      "service_tier": "default",
+      "id": "chatcmpl-R1yAKZAhujLK8AEV1F8O0bay",
+      "object": "chat.completion",
+      "created": 1795569013,
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "4",
+            "reasoning_content": null,
+            "name": null,
+            "tool_calls": []
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 902,
+        "total_tokens": 904,
+        "completion_tokens": 2,
+        "estimated_cost": 6.805e-05,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]
