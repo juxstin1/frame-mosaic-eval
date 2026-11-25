@@ -1,0 +1,2715 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-25T02:37:53.0008793Z",
+  "scope": "Matched-768 schema comparisons only; original-study logs and smoke tests are outside these tables.",
+  "selection_policy": [
+    "Use only table_cells.selected_path; never glob or concatenate all result folders.",
+    "Each selected cell is one complete run with 150 unique cases, the specified schema, a 32-token cap, matching images/questions/truth/system prompt and a verified source snapshot.",
+    "Cutoffs and invalid answers remain failures in the 150-case denominator; HTTP-failed attempts remain separate audit records.",
+    "Reasoning controls remain separate metadata: identical answer format does not establish equal reasoning or provider preprocessing.",
+    "This is a snapshot. Verify selected JSONL hashes before generating tables; refresh incomplete entries explicitly rather than silently promoting them.",
+    "For newly added models, select the earliest complete verified run for each format, not the highest score; requested new6 repeats remain separately identifiable by folder."
+  ],
+  "reference_path": "results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl",
+  "table_cells": [
+    {
+      "model_alias": "gemma",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/gemma_matched768_schema_v1/gemma_sweep.jsonl",
+      "candidate_path": "results/gemma_matched768_schema_v1/gemma_sweep.jsonl"
+    },
+    {
+      "model_alias": "gemma",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/gemma_matched768_object_v1/gemma_sweep.jsonl",
+      "candidate_path": "results/gemma_matched768_object_v1/gemma_sweep.jsonl"
+    },
+    {
+      "model_alias": "mistral",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl",
+      "candidate_path": "results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl"
+    },
+    {
+      "model_alias": "mistral",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_mistral_matched768_object_v1/mistral_sweep.jsonl",
+      "candidate_path": "results/deepinfra_mistral_matched768_object_v1/mistral_sweep.jsonl"
+    },
+    {
+      "model_alias": "scout",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_matched768_schema_v1/scout_sweep.jsonl",
+      "candidate_path": "results/deepinfra_matched768_schema_v1/scout_sweep.jsonl"
+    },
+    {
+      "model_alias": "scout",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "failed",
+      "selected_path": null,
+      "candidate_path": "results/deepinfra_scout_matched768_object_retry1/scout_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen30",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_qwen30_matched768_schema_v1/qwen30_sweep.jsonl",
+      "candidate_path": "results/deepinfra_qwen30_matched768_schema_v1/qwen30_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen30",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_qwen30_matched768_object_retry1/qwen30_sweep.jsonl",
+      "candidate_path": "results/deepinfra_qwen30_matched768_object_retry1/qwen30_sweep.jsonl"
+    },
+    {
+      "model_alias": "gemma26",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_expansion_matched768_schema_v1/gemma26_sweep.jsonl",
+      "candidate_path": "results/deepinfra_expansion_matched768_schema_v1/gemma26_sweep.jsonl"
+    },
+    {
+      "model_alias": "gemma26",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_all_matched768_object_v1/gemma26_sweep.jsonl",
+      "candidate_path": "results/deepinfra_all_matched768_object_v1/gemma26_sweep.jsonl"
+    },
+    {
+      "model_alias": "nemotron",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_expansion_matched768_schema_v1/nemotron_sweep.jsonl",
+      "candidate_path": "results/deepinfra_expansion_matched768_schema_v1/nemotron_sweep.jsonl"
+    },
+    {
+      "model_alias": "nemotron",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_all_matched768_object_v1/nemotron_sweep.jsonl",
+      "candidate_path": "results/deepinfra_all_matched768_object_v1/nemotron_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen38",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_expansion_matched768_schema_v1/qwen38_sweep.jsonl",
+      "candidate_path": "results/deepinfra_expansion_matched768_schema_v1/qwen38_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen38",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_qwen38_matched768_object_retry1/qwen38_sweep.jsonl",
+      "candidate_path": "results/deepinfra_qwen38_matched768_object_retry1/qwen38_sweep.jsonl"
+    },
+    {
+      "model_alias": "glmflash",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_expansion_matched768_schema_v1/glmflash_sweep.jsonl",
+      "candidate_path": "results/deepinfra_expansion_matched768_schema_v1/glmflash_sweep.jsonl"
+    },
+    {
+      "model_alias": "glmflash",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_glmflash_matched768_object_retry1/glmflash_sweep.jsonl",
+      "candidate_path": "results/deepinfra_glmflash_matched768_object_retry1/glmflash_sweep.jsonl"
+    },
+    {
+      "model_alias": "haiku55",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/claude_matched768_haiku_v1/haiku55_sweep.jsonl",
+      "candidate_path": "results/claude_matched768_haiku_v1/haiku55_sweep.jsonl"
+    },
+    {
+      "model_alias": "haiku55",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/claude_matched768_haiku_object_v1/haiku55_sweep.jsonl",
+      "candidate_path": "results/claude_matched768_haiku_object_v1/haiku55_sweep.jsonl"
+    },
+    {
+      "model_alias": "sonnet55",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/claude_matched768_integer_v1/sonnet55_sweep.jsonl",
+      "candidate_path": "results/claude_matched768_integer_v1/sonnet55_sweep.jsonl"
+    },
+    {
+      "model_alias": "sonnet55",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/claude_matched768_sonnet_object_v1/sonnet55_sweep.jsonl",
+      "candidate_path": "results/claude_matched768_sonnet_object_v1/sonnet55_sweep.jsonl"
+    },
+    {
+      "model_alias": "opus55",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/claude_matched768_integer_v1/opus55_sweep.jsonl",
+      "candidate_path": "results/claude_matched768_integer_v1/opus55_sweep.jsonl"
+    },
+    {
+      "model_alias": "opus55",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/claude_matched768_opus_object32_v1/opus55_sweep.jsonl",
+      "candidate_path": "results/claude_matched768_opus_object32_v1/opus55_sweep.jsonl"
+    },
+    {
+      "model_alias": "kimi",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_kimi_matched768_object_v1/kimi_sweep.jsonl",
+      "candidate_path": "results/deepinfra_kimi_matched768_object_v1/kimi_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen4max",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new6_matched768_integer_v1/qwen4max_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new6_matched768_integer_v1/qwen4max_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen4max",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new3_matched768_object_v1/qwen4max_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new3_matched768_object_v1/qwen4max_sweep.jsonl"
+    },
+    {
+      "model_alias": "dsflash41",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new3_matched768_integer_v1/dsflash41_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new3_matched768_integer_v1/dsflash41_sweep.jsonl"
+    },
+    {
+      "model_alias": "dsflash41",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new3_matched768_object_v1/dsflash41_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new3_matched768_object_v1/dsflash41_sweep.jsonl"
+    },
+    {
+      "model_alias": "mimo26pro",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new3_matched768_integer_v1/mimo26pro_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new3_matched768_integer_v1/mimo26pro_sweep.jsonl"
+    },
+    {
+      "model_alias": "mimo26pro",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new3_matched768_object_v1/mimo26pro_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new3_matched768_object_v1/mimo26pro_sweep.jsonl"
+    },
+    {
+      "model_alias": "inkling2m",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new6_matched768_integer_retry1/inkling2m_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new6_matched768_integer_retry1/inkling2m_sweep.jsonl"
+    },
+    {
+      "model_alias": "inkling2m",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new6_matched768_object_retry1/inkling2m_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new6_matched768_object_retry1/inkling2m_sweep.jsonl"
+    },
+    {
+      "model_alias": "gemini37f",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "failed",
+      "selected_path": null,
+      "candidate_path": "results/deepinfra_new6_matched768_integer_v1/gemini37f_sweep.jsonl"
+    },
+    {
+      "model_alias": "gemini37f",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "failed",
+      "selected_path": null,
+      "candidate_path": "results/deepinfra_new6_matched768_object_retry1/gemini37f_sweep.jsonl"
+    },
+    {
+      "model_alias": "hy4",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new6_matched768_integer_v1/hy4_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new6_matched768_integer_v1/hy4_sweep.jsonl"
+    },
+    {
+      "model_alias": "hy4",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_new6_matched768_object_v1/hy4_sweep.jsonl",
+      "candidate_path": "results/deepinfra_new6_matched768_object_v1/hy4_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen35",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_qwen35_matched768_integer_v1/qwen35_sweep.jsonl",
+      "candidate_path": "results/deepinfra_qwen35_matched768_integer_v1/qwen35_sweep.jsonl"
+    },
+    {
+      "model_alias": "qwen35",
+      "answer_format": "object",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_qwen35_matched768_object_retry1/qwen35_sweep.jsonl",
+      "candidate_path": "results/deepinfra_qwen35_matched768_object_retry1/qwen35_sweep.jsonl"
+    },
+    {
+      "model_alias": "kimi",
+      "answer_format": "integer",
+      "requested_max_tokens": 32,
+      "status": "selected",
+      "selected_path": "results/deepinfra_kimi_matched768_integer_v1/kimi_sweep.jsonl",
+      "candidate_path": "results/deepinfra_kimi_matched768_integer_v1/kimi_sweep.jsonl"
+    }
+  ],
+  "runs": [
+    {
+      "path": "results/claude_matched768_haiku_object_v1/haiku55_sweep.jsonl",
+      "model_alias": "haiku55",
+      "model": "claude-haiku-5-5",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 124,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "3fce50edaf0e423d85e3dbfab2053e1f2912d7d07fe16c74ba0c9f167dc84ab4",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "15260d8ce46a9c587d4dc72447c3f2167859b897b8779c2a0a6ab31242eb09f1",
+      "notes": [
+        "Historical protocol label is wrong; saved response_format establishes the object schema. Raw records are unchanged."
+      ]
+    },
+    {
+      "path": "results/claude_matched768_haiku_v1/haiku55_sweep.jsonl",
+      "model_alias": "haiku55",
+      "model": "claude-haiku-5-5",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 3,
+      "cutoffs": 147,
+      "invalid_answers": 147,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "a7961c1d335a9ed8de7f006681e5cf0fa45709f8383f3f350861050ba297320b",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "aa51ac8d2ff9fac1b90b66d718569787bacb1cec5f5139a33ca8b5e99c41bebf",
+      "notes": []
+    },
+    {
+      "path": "results/claude_matched768_integer_v1/opus55_sweep.jsonl",
+      "model_alias": "opus55",
+      "model": "claude-opus-5-5",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "output_config": {
+          "effort": "low"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 131,
+      "cutoffs": 13,
+      "invalid_answers": 13,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "99526c882a9aa384aed13d0b2b3e2001a2822fa229b9980dfd18abd4c6d451d0",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+      "notes": [
+        "Low effort was requested; this is not a thinking-off condition."
+      ]
+    },
+    {
+      "path": "results/claude_matched768_integer_v1/sonnet55_sweep.jsonl",
+      "model_alias": "sonnet55",
+      "model": "claude-sonnet-5-5",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "thinking": {
+          "type": "between_tools"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 0,
+      "cutoffs": 146,
+      "invalid_answers": 149,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "04d52f0e9ac7397c76ae7021e0dee26d1a2785f9e5991325a497361e55deb583",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+      "notes": [
+        "thinking.type=between_tools was requested; retain that exact label rather than inferring absence of internal reasoning."
+      ]
+    },
+    {
+      "path": "results/claude_matched768_opus_object32_v1/opus55_sweep.jsonl",
+      "model_alias": "opus55",
+      "model": "claude-opus-5-5",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "output_config": {
+          "effort": "low"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 147,
+      "cutoffs": 1,
+      "invalid_answers": 1,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "ac4f69c3c908f5c912341c149e17ac62afa20df90ca355faec3c024f745b370a",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "cdcaae6589d6a1a4f4fea6bd52e3ebbebfd68fc2d60f3c90bcda0534876aea99",
+      "notes": [
+        "Low effort was requested; this is not a thinking-off condition."
+      ]
+    },
+    {
+      "path": "results/claude_matched768_opus_v1/opus55_sweep.jsonl",
+      "model_alias": "opus55",
+      "model": "claude-opus-5-5",
+      "status": "complete",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate 4096-cap experiment; excluded from the cap-32 tables.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        4096
+      ],
+      "requested_options": {
+        "output_config": {
+          "effort": "low"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 148,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "001c7d85518bbdb6c2dacab81aa2fbdb580f06c6cca6b2718da1ed864255966b",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": [
+        "Historical protocol label is wrong; saved response_format establishes the object schema. Raw records are unchanged.",
+        "Low effort was requested; this is not a thinking-off condition."
+      ]
+    },
+    {
+      "path": "results/claude_matched768_sonnet_object_v1/sonnet55_sweep.jsonl",
+      "model_alias": "sonnet55",
+      "model": "claude-sonnet-5-5",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "thinking": {
+          "type": "between_tools"
+        }
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 135,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "fca86edb86d0f1151f1ebe1d5b1cbecf0ac671b706e5ab109f0a20f105e314a0",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "15260d8ce46a9c587d4dc72447c3f2167859b897b8779c2a0a6ab31242eb09f1",
+      "notes": [
+        "Historical protocol label is wrong; saved response_format establishes the object schema. Raw records are unchanged.",
+        "thinking.type=between_tools was requested; retain that exact label rather than inferring absence of internal reasoning."
+      ]
+    },
+    {
+      "path": "results/deepinfra_all_matched768_object_v1/gemma26_sweep.jsonl",
+      "model_alias": "gemma26",
+      "model": "google/gemma-4-26B-A4B-it",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 104,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "4ab0d366141a8f88d28447693b49d2ec0bb638adfd3806ea3219450136b32ffd",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_all_matched768_object_v1/glmflash_sweep.jsonl",
+      "model_alias": "glmflash",
+      "model": "zai-org/GLM-5.3-Flash",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Failed attempt retained for audit; excluded from the main tables and never pooled with a restart.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 14,
+      "responses": 13,
+      "unique_cases": 14,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 9,
+      "cutoffs": 3,
+      "invalid_answers": 3,
+      "request_errors": 1,
+      "reported_reasoning_records": 13,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "27d26542e5b3f9afc51cfaa86cb67d62cb8341b5348730343f172b9c56d1fdbe",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": [
+        "Reasoning off was requested but reasoning was observed; do not label this a thinking-off run."
+      ]
+    },
+    {
+      "path": "results/deepinfra_all_matched768_object_v1/nemotron_sweep.jsonl",
+      "model_alias": "nemotron",
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 103,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "200af7634f7d34edf787af09e1bd957ddcc5a17e78213c3aa6f2c73844dd5a11",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_all_matched768_object_v1/qwen30_sweep.jsonl",
+      "model_alias": "qwen30",
+      "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Failed attempt retained for audit; excluded from the main tables and never pooled with a restart.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {},
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 23,
+      "responses": 22,
+      "unique_cases": 23,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 14,
+      "cutoffs": 1,
+      "invalid_answers": 1,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "088087ae448b93a73f4e99b5a9185414136659ef48cb6f4a6eb1a24a565aee50",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_all_matched768_object_v1/qwen38_sweep.jsonl",
+      "model_alias": "qwen38",
+      "model": "Qwen/Qwen3.8-27B",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Failed attempt retained for audit; excluded from the main tables and never pooled with a restart.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 24,
+      "responses": 23,
+      "unique_cases": 24,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 21,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "117ff0d66ee3f31431a872248f719610e9dcc7bdd8689307f43b347f3100e397",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_all_matched768_object_v1/scout_sweep.jsonl",
+      "model_alias": "scout",
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Failed attempt retained for audit; excluded from the main tables and never pooled with a restart.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {},
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 2,
+      "responses": 1,
+      "unique_cases": 2,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 1,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "7ac58aaa270c93be157c12bcc21a8d5bf9ff8979dfa4ba48434e4d3a1d27e33f",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_expansion_matched768_schema_v1/gemma26_sweep.jsonl",
+      "model_alias": "gemma26",
+      "model": "google/gemma-4-26B-A4B-it",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 58,
+      "cutoffs": 52,
+      "invalid_answers": 52,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "b82572d7bf9c05ce5423e42daa5b985a2695f54b23d7b75adaa43e3fff1a5210",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "0f2a324975781d57991a7e1717f763210a640192598af3dae7b6aeedbefec83e",
+      "notes": [
+        "Publication audit corrected index cutoffs from 0 using saved finish_reason=length. Result records were not edited."
+      ]
+    },
+    {
+      "path": "results/deepinfra_expansion_matched768_schema_v1/glmflash_sweep.jsonl",
+      "model_alias": "glmflash",
+      "model": "zai-org/GLM-5.3-Flash",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 123,
+      "cutoffs": 21,
+      "invalid_answers": 21,
+      "request_errors": 0,
+      "reported_reasoning_records": 88,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "e3ad419e640d1b4758b2755be5abe4e9dd5abc58802133e4bb82451e168f1885",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "0f2a324975781d57991a7e1717f763210a640192598af3dae7b6aeedbefec83e",
+      "notes": [
+        "Reasoning off was requested but reasoning was observed; do not label this a thinking-off run.",
+        "Publication audit corrected index cutoffs from 0 using saved finish_reason=length. Result records were not edited."
+      ]
+    },
+    {
+      "path": "results/deepinfra_expansion_matched768_schema_v1/nemotron_sweep.jsonl",
+      "model_alias": "nemotron",
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 93,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "6313c5663625d1c7e80a39e43be4e4c806d5101b626a466ab9865d9cb466b9b7",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "0f2a324975781d57991a7e1717f763210a640192598af3dae7b6aeedbefec83e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_expansion_matched768_schema_v1/qwen38_sweep.jsonl",
+      "model_alias": "qwen38",
+      "model": "Qwen/Qwen3.8-27B",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 117,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "44c59eb20a3e04ff7d8e70f98cde67474a4c29f949f4aba92f4cb0f8ef89b0f8",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "0f2a324975781d57991a7e1717f763210a640192598af3dae7b6aeedbefec83e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_glmflash_matched768_object_retry1/glmflash_sweep.jsonl",
+      "model_alias": "glmflash",
+      "model": "zai-org/GLM-5.3-Flash",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 118,
+      "cutoffs": 26,
+      "invalid_answers": 26,
+      "request_errors": 0,
+      "reported_reasoning_records": 91,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "6d570f4128329c8aaef710c9508e32b7561f1cb38c0aadccac87071020912b61",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+      "notes": [
+        "Reasoning off was requested but reasoning was observed; do not label this a thinking-off run."
+      ]
+    },
+    {
+      "path": "results/deepinfra_kimi_matched768_object_v1/kimi_sweep.jsonl",
+      "model_alias": "kimi",
+      "model": "moonshotai/Kimi-K3.1-Pro",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 137,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "dc150348d9033c5513391b5835e0a4d14270aae11f3d5066c13f42155e6e6137",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "cdcaae6589d6a1a4f4fea6bd52e3ebbebfd68fc2d60f3c90bcda0534876aea99",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_matched768_integer_v1/mistral_sweep.jsonl",
+      "model_alias": "mistral",
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "status": "complete",
+      "selected_for_main_table": false,
+      "selection_reason": "Instruction-only format control; excluded from schema-based tables.",
+      "actual_schema_type": [
+        "unspecified"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_system_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": null,
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 88,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "bf037e36495501ec1cb6c140f1a17cc8fe35dd387fe2982ad8b64f03a79c6d5f",
+      "runner_snapshot_verified": false,
+      "runner_sha256": null,
+      "notes": [
+        "This older instruction-only control has no recorded runner SHA256; source verification is unavailable, not a detected hash mismatch."
+      ]
+    },
+    {
+      "path": "results/deepinfra_matched768_schema_v1/mistral_sweep.jsonl",
+      "model_alias": "mistral",
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": null,
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 88,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "6934574cc84c2ab5758d85e6c6f6117e60575428732ca361c88919a4a59bb820",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "8f8126cef7d9a23310816ba09775ae5192daba7f9f90c703ae81c2fb53db2534",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_matched768_schema_v1/scout_sweep.jsonl",
+      "model_alias": "scout",
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": null,
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 63,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "980f3729e222b147849d545766d43f9adda3daed6a6103c888d034d696c07371",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "8f8126cef7d9a23310816ba09775ae5192daba7f9f90c703ae81c2fb53db2534",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_mistral_matched768_object_v1/mistral_sweep.jsonl",
+      "model_alias": "mistral",
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {},
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 21,
+      "cutoffs": 114,
+      "invalid_answers": 114,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "a349bd1d65e00ac9c12f64c8aad2593ff8e92ca96dc595fa65709fe52585d791",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_qwen30_matched768_object_retry1/qwen30_sweep.jsonl",
+      "model_alias": "qwen30",
+      "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {},
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 50,
+      "cutoffs": 65,
+      "invalid_answers": 65,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "03e129906599408bf9e5a12bf44f3872ef93ce55d63b215347178e2eb7ab6a2d",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_qwen30_matched768_schema_v1/qwen30_sweep.jsonl",
+      "model_alias": "qwen30",
+      "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": null,
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 90,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "fecf141d4cce5028b688255855830182481a26aa0fd34cd658a1fa7f0d675636",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "0db27ec2ec08221dd948fb89ac29903df0185dcb1d0459bff2a17a139f4e3992",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_qwen38_matched768_object_retry1/qwen38_sweep.jsonl",
+      "model_alias": "qwen38",
+      "model": "Qwen/Qwen3.8-27B",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 118,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "f045480f597a428e3db98d6fc073cab016a05c452cab14f3d451ac8944a04961",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_scout_matched768_object_retry1/scout_sweep.jsonl",
+      "model_alias": "scout",
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Failed attempt retained for audit; excluded from the main tables and never pooled with a restart.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {},
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 33,
+      "responses": 32,
+      "unique_cases": 33,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 17,
+      "cutoffs": 2,
+      "invalid_answers": 2,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "9aff5ba4dcf408b27954a11337c4c542fd866c0c5d48593b82b626fd3ce2b726",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "a89f343def7b265fba9401b1b51bf23fe1308739c3789dfad48c39e8f29eea4e",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_thinking4096_matched768_v1/gemma26_sweep.jsonl",
+      "model_alias": "gemma26",
+      "model": "google/gemma-4-26B-A4B-it",
+      "status": "incomplete",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate high-effort, 4096-cap experiment; excluded from the cap-32 main tables. Counts are a snapshot, not a claim about whether its process is running.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_thinking4096_v1"
+      ],
+      "requested_max_tokens": [
+        4096
+      ],
+      "requested_options": {
+        "reasoning_effort": "high"
+      },
+      "system_prompt": "Reason internally as needed. Return only a single integer as the final answer.",
+      "records": 145,
+      "responses": 145,
+      "unique_cases": 145,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 94,
+      "cutoffs": 45,
+      "invalid_answers": 45,
+      "request_errors": 0,
+      "reported_reasoning_records": 145,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "9617e96c10fc54a987ced034cfe68c1c95d6338ce6a8bdc8b1f94e380b4c995e",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "aa51ac8d2ff9fac1b90b66d718569787bacb1cec5f5139a33ca8b5e99c41bebf",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_thinking4096_matched768_v1/glmflash_sweep.jsonl",
+      "model_alias": "glmflash",
+      "model": "zai-org/GLM-5.3-Flash",
+      "status": "complete",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate 4096-cap experiment; excluded from the cap-32 tables.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_thinking4096_v1"
+      ],
+      "requested_max_tokens": [
+        4096
+      ],
+      "requested_options": {
+        "reasoning_effort": "high"
+      },
+      "system_prompt": "Reason internally as needed. Return only a single integer as the final answer.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 140,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 111,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "271f76ab9e5ef64abd6553b2cb02454f5e9e62a0bd3800bdf6634d0e1ed2164b",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "aa51ac8d2ff9fac1b90b66d718569787bacb1cec5f5139a33ca8b5e99c41bebf",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_thinking4096_matched768_v1/nemotron_sweep.jsonl",
+      "model_alias": "nemotron",
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "status": "complete",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate 4096-cap experiment; excluded from the cap-32 tables.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_thinking4096_v1"
+      ],
+      "requested_max_tokens": [
+        4096
+      ],
+      "requested_options": {
+        "reasoning_effort": "high"
+      },
+      "system_prompt": "Reason internally as needed. Return only a single integer as the final answer.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 138,
+      "cutoffs": 2,
+      "invalid_answers": 2,
+      "request_errors": 0,
+      "reported_reasoning_records": 150,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "d7210aa81c65a47b8a0a0e07c8e453ed77eb33c6bedd8059f8f6a38d7ba6a35c",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "aa51ac8d2ff9fac1b90b66d718569787bacb1cec5f5139a33ca8b5e99c41bebf",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_thinking4096_matched768_v1/qwen38_sweep.jsonl",
+      "model_alias": "qwen38",
+      "model": "Qwen/Qwen3.8-27B",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Failed attempt retained for audit; excluded from the main tables and never pooled with a restart.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_thinking4096_v1"
+      ],
+      "requested_max_tokens": [
+        4096
+      ],
+      "requested_options": {
+        "reasoning_effort": "high"
+      },
+      "system_prompt": "Reason internally as needed. Return only a single integer as the final answer.",
+      "records": 55,
+      "responses": 54,
+      "unique_cases": 55,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 49,
+      "cutoffs": 1,
+      "invalid_answers": 1,
+      "request_errors": 1,
+      "reported_reasoning_records": 54,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "23ed92ef1d4f7100fc55380d301ab03fec50c1c5282d31d5bf8a413005cc14c8",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "aa51ac8d2ff9fac1b90b66d718569787bacb1cec5f5139a33ca8b5e99c41bebf",
+      "notes": []
+    },
+    {
+      "path": "results/gemma_matched768_object_v1/gemma_sweep.jsonl",
+      "model_alias": "gemma",
+      "model": "gemma4-12b-qat-q4_0-matched768",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {},
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 99,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "c933a1655fffdece1e018309f87c0d9fd92d23895a3e249533e91c609a256d12",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "notes": []
+    },
+    {
+      "path": "results/gemma_matched768_schema_v1/gemma_sweep.jsonl",
+      "model_alias": "gemma",
+      "model": "gemma4-12b-qat-q4_0-matched768",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Selected complete 150-case run for this model and format at cap 32; never pool with other attempts.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": null,
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 91,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "input_mismatches_against_reference": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "4c3f94613e6986e82e3cc8a5fa89fc1bb25195ca8e1ca8e89e10ea9517494929",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "4a09917d1d2f646a17aaff26dd037dc8811eb70867e12f517ab3586890b8a28a",
+      "notes": [
+        "Requires launch_source.py AND runner_source.py to reconstruct the executed settings. Launcher overrides the model, schema and protocol and sends enable_thinking=false. Its hash here is measured at indexing time, not verified against an original recorded hash. The original server launch command was not saved."
+      ],
+      "launch_source_path": "results/gemma_matched768_schema_v1/launch_source.py",
+      "launch_source_sha256_at_indexing": "d0a64fbdee686129f818a0838d24409542f78df8be9340aed43d221bf828fadb",
+      "launch_hash_recorded_in_original_manifest": false
+    },
+    {
+      "path": "results/deepinfra_kimi_matched768_integer_v1/kimi_sweep.jsonl",
+      "model_alias": "kimi",
+      "model": "moonshotai/Kimi-K3.1-Pro",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 0,
+      "cutoffs": 150,
+      "invalid_answers": 150,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "62b67c7863143899d4759d17f3816a43a0d9624d82f508cb4dafce5fb6130217",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:39:28.708619-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.421512Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new3_matched768_integer_v1/dsflash41_sweep.jsonl",
+      "model_alias": "dsflash41",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 113,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "304636d03be262852bd6b67ead0b36e45dd7689533437ac80058c641e295e830",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:38:53.78687-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.4525553Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new3_matched768_integer_v1/mimo26pro_sweep.jsonl",
+      "model_alias": "mimo26pro",
+      "model": "XiaomiMiMo/MiMo-V2.6-Pro",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 119,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "606a188971e228c3673265974c6bbbffc369f5a7f1d3c1096476bea996d66a50",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:38:53.785869-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.4767998Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new3_matched768_integer_v1/qwen4max_sweep.jsonl",
+      "model_alias": "qwen4max",
+      "model": "Qwen/Qwen4-Max",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 112,
+      "responses": 111,
+      "unique_cases": 112,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 98,
+      "cutoffs": 2,
+      "invalid_answers": 2,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "ec90c549e24f547b7f1554833cbc0aec2bbf3b6e042640e25e3bd8abf3af2387",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:38:53.78687-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.518669Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new3_matched768_object_v1/dsflash41_sweep.jsonl",
+      "model_alias": "dsflash41",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 119,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "7d6da87538ff7a2543dce92e98c645168b9ac3040c81f24d87d5d71f6fe12a93",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:39:06.55924-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.5434147Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new3_matched768_object_v1/mimo26pro_sweep.jsonl",
+      "model_alias": "mimo26pro",
+      "model": "XiaomiMiMo/MiMo-V2.6-Pro",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 109,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "bfa90493639eb03206eaa8972092c6449bc46161e9e5a7a6ac873ec2628d1c4f",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:39:06.55924-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.5762109Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new3_matched768_object_v1/qwen4max_sweep.jsonl",
+      "model_alias": "qwen4max",
+      "model": "Qwen/Qwen4-Max",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 138,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "a71c4e5d50fd9c33a8a3cfc6ff991a13b02a85956d4455417f36705c76cf9732",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "9b1b99f93a2a3a8c3ac086c916b7ad26524b5f649f17ebc12b5e3c60b1d6bd8c",
+      "first_request_utc": "2026-11-24T22:39:06.560239-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.5981961Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_retry1/inkling2m_sweep.jsonl",
+      "model_alias": "inkling2m",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 107,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "750e4779da575a0d7a157ab53966b99dea41d4196d8cbeca389c9b59e718e211",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T23:01:11.467031-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.6480721Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_v1/dsflash41_sweep.jsonl",
+      "model_alias": "dsflash41",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 98,
+      "responses": 97,
+      "unique_cases": 98,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 68,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "9006b0ecc6900897c670fcf7e53160faf66b51fa31b39213f65d65dfd63e61ee",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:45:18.68107-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.6890457Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_v1/gemini37f_sweep.jsonl",
+      "model_alias": "gemini37f",
+      "model": "google/gemini-3.7-flash",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 61,
+      "responses": 60,
+      "unique_cases": 61,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 0,
+      "cutoffs": 60,
+      "invalid_answers": 60,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 60,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "6a2050cfed44c45ca20ac1c6840c60f088d77b5db46b50d625e218fed9bd9193",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:45:18.68107-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.6996293Z",
+      "notes": [
+        "reasoning_content is empty, but usage reports reasoning tokens; do not infer thinking was disabled."
+      ]
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_v1/hy4_sweep.jsonl",
+      "model_alias": "hy4",
+      "model": "tencent/Hy4",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 113,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "a1e99890574ea6e4b8f716760432251229ed1a9e93b3a451c2b753ed6a254e51",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:45:18.679565-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.7238338Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_v1/inkling2m_sweep.jsonl",
+      "model_alias": "inkling2m",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 146,
+      "responses": 145,
+      "unique_cases": 146,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 108,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "02569248a90f5e6c8ed2f9df97819fcd219d5b17dc48a54c72f61a60b6d64f85",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:45:18.682074-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.7538668Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_v1/mimo26pro_sweep.jsonl",
+      "model_alias": "mimo26pro",
+      "model": "XiaomiMiMo/MiMo-V2.6-Pro",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 126,
+      "responses": 125,
+      "unique_cases": 126,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 95,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "f188539a01b83e92c31f8462b528978805e8b6ebbdd6c8a4d6a4ae0821b98791",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:45:18.68107-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.7729859Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_integer_v1/qwen4max_sweep.jsonl",
+      "model_alias": "qwen4max",
+      "model": "Qwen/Qwen4-Max",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 124,
+      "cutoffs": 10,
+      "invalid_answers": 10,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "f5cb7de12d034056f2f07d1e88438e3d705e19e6dedac0b27a22820f9e167068",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:45:18.68107-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.7943615Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_retry1/gemini37f_sweep.jsonl",
+      "model_alias": "gemini37f",
+      "model": "google/gemini-3.7-flash",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 3,
+      "responses": 2,
+      "unique_cases": 3,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 0,
+      "cutoffs": 2,
+      "invalid_answers": 2,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 2,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "d7442704e538fc20d92da74b01f27d6806f9d36dd82934dd192c0d92553b21f1",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T22:49:42.792589-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.8024228Z",
+      "notes": [
+        "reasoning_content is empty, but usage reports reasoning tokens; do not infer thinking was disabled."
+      ]
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_retry1/inkling2m_sweep.jsonl",
+      "model_alias": "inkling2m",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 108,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "c035d7c78b2cca1a109043b0bca5d7d8e4efd2fb541b48db5c9f78042f94696b",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T22:49:42.792589-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.8457608Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_retry1/qwen4max_sweep.jsonl",
+      "model_alias": "qwen4max",
+      "model": "Qwen/Qwen4-Max",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 5,
+      "responses": 4,
+      "unique_cases": 5,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 4,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "e3c09494074834266964dd6d64722650f514def7514edf5bc23a245f2afd921a",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T22:49:42.792589-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.849856Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_v1/dsflash41_sweep.jsonl",
+      "model_alias": "dsflash41",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 35,
+      "responses": 34,
+      "unique_cases": 35,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 32,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "2cb8b3e2f8cc001818b08dab2a6df05d8fdc6c6a17f88b94c9b2808899d6136d",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:46:38.94353-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.8607085Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_v1/gemini37f_sweep.jsonl",
+      "model_alias": "gemini37f",
+      "model": "google/gemini-3.7-flash",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 16,
+      "responses": 15,
+      "unique_cases": 16,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 0,
+      "cutoffs": 15,
+      "invalid_answers": 15,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 15,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "89941f34deeaf7bbbae9ad42dc6ad89caf051b963ff26e18ff3aa3fbfbde96a4",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:46:38.940533-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.866747Z",
+      "notes": [
+        "reasoning_content is empty, but usage reports reasoning tokens; do not infer thinking was disabled."
+      ]
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_v1/hy4_sweep.jsonl",
+      "model_alias": "hy4",
+      "model": "tencent/Hy4",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 119,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "cc3d910c3ef9e28a0bd04eacd7e34f126588c5651596f6264f998d5bdd12f9f4",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:46:38.94353-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.8991426Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_v1/inkling2m_sweep.jsonl",
+      "model_alias": "inkling2m",
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 38,
+      "responses": 37,
+      "unique_cases": 38,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 30,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "3ef40688d4fa2d7e67699ed0064d67ecbc73d306f5701571bb420e2724d2c134",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:46:38.940533-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.909358Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_v1/mimo26pro_sweep.jsonl",
+      "model_alias": "mimo26pro",
+      "model": "XiaomiMiMo/MiMo-V2.6-Pro",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 78,
+      "responses": 77,
+      "unique_cases": 78,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 64,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "0d70c89048c0c31f3dd6fdcda769d4f1bda9c4a3c86b100a6eed91b81ad4fba1",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:46:38.941529-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.9286139Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_new6_matched768_object_v1/qwen4max_sweep.jsonl",
+      "model_alias": "qwen4max",
+      "model": "Qwen/Qwen4-Max",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 14,
+      "responses": 13,
+      "unique_cases": 14,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 13,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "fe3bd4e80d8f1a3016837f4ca1bec66ec9d63488be544e73f7e0ad3711285af2",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "01cefe6ab43e7c95e8d6b9914296f5c0f9edbcb7acf333a6523dfd15c6ece1c8",
+      "first_request_utc": "2026-11-24T22:46:38.942532-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.9338188Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_qwen35_matched768_integer_v1/qwen35_sweep.jsonl",
+      "model_alias": "qwen35",
+      "model": "Qwen/Qwen3.5-397B-A17B",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "integer"
+      ],
+      "recorded_protocol": [
+        "matched768_integer_schema_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 128,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "b82b4b9b7dfb2e6b569181fbfc79943bba362e9286597778a6c4f005cc4c8aaf",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T22:47:18.5061-04:00",
+      "snapshot_utc": "2026-11-25T03:04:16.9623237Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_qwen35_matched768_object_retry1/qwen35_sweep.jsonl",
+      "model_alias": "qwen35",
+      "model": "Qwen/Qwen3.5-397B-A17B",
+      "status": "complete",
+      "selected_for_main_table": true,
+      "selection_reason": "Earliest complete verified run for this model and format at cap 32; later repeats stay separate regardless of score.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 150,
+      "responses": 150,
+      "unique_cases": 150,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 130,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 0,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "642116411232707bfc277ee1e7e04b0b7a3e4d914302fa2d6c6b504d87e39798",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T22:49:56.959256-04:00",
+      "snapshot_utc": "2026-11-25T03:04:17.0005841Z",
+      "notes": []
+    },
+    {
+      "path": "results/deepinfra_qwen35_matched768_object_v1/qwen35_sweep.jsonl",
+      "model_alias": "qwen35",
+      "model": "Qwen/Qwen3.5-397B-A17B",
+      "status": "failed",
+      "selected_for_main_table": false,
+      "selection_reason": "Separate attempt retained; never pool cases with another attempt.",
+      "actual_schema_type": [
+        "object"
+      ],
+      "recorded_protocol": [
+        "matched768_answer_object_v1"
+      ],
+      "requested_max_tokens": [
+        32
+      ],
+      "requested_options": {
+        "reasoning_effort": "none"
+      },
+      "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+      "records": 9,
+      "responses": 8,
+      "unique_cases": 9,
+      "duplicate_cases": 0,
+      "expected_cases": 150,
+      "correct": 8,
+      "cutoffs": 0,
+      "invalid_answers": 0,
+      "request_errors": 1,
+      "reported_reasoning_records": 0,
+      "positive_reported_reasoning_token_records": 0,
+      "input_mismatches_against_reference": 0,
+      "request_setting_mismatches": 0,
+      "trailing_partial_record": false,
+      "jsonl_sha256": "c7ae7db4f6cee628eb8fe5e74cc1033b59776f2c5cff58668163d395cb1b6890",
+      "runner_snapshot_verified": true,
+      "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+      "config_snapshot_verified": true,
+      "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+      "first_request_utc": "2026-11-24T22:47:30.6124-04:00",
+      "snapshot_utc": "2026-11-25T03:04:17.0051643Z",
+      "notes": []
+    }
+  ],
+  "separate_diagnostics": [
+    {
+      "path": "results/glm53_raw_tag_test_v1/responses.jsonl",
+      "purpose": "Six full-GLM-5.3 text-only open/closed think-tag requests; not a mosaic score and excluded from both main tables."
+    }
+  ],
+  "updated_utc": "2026-11-25T03:04:17.0350648Z",
+  "artifact_redactions": [
+    {
+      "path": "logs/server/gemma_object_20261124-223126.json",
+      "event": "Post-run privacy redaction before this PR",
+      "scope": "Private absolute model-store paths replaced with <MODELS_DIR>/; server executable path in JSON replaced with <LLAMA_CPP_DIR>/llama-server.exe.",
+      "current_sha256": "d746500afa8d4d92cbcf4f74c1201f6920ac1dd46aa01f4c0648e8b05f9ed9f3",
+      "original_sha256": null,
+      "note": "Original pre-redaction hash was not recorded. This is a redacted artifact, not an untouched original. Result JSONL records and model/binary hash values were not edited."
+    },
+    {
+      "path": "logs/server/gemma_object_20261124-223126.log.err",
+      "event": "Post-run privacy redaction before this PR",
+      "scope": "Private absolute model-store paths replaced with <MODELS_DIR>/; server executable path in JSON replaced with <LLAMA_CPP_DIR>/llama-server.exe.",
+      "current_sha256": "83314fae86114ef7efabe9732fe96b83603dda5b72b9d86d4129263c29113aed",
+      "original_sha256": null,
+      "note": "Original pre-redaction hash was not recorded. This is a redacted artifact, not an untouched original. Result JSONL records and model/binary hash values were not edited."
+    }
+  ],
+  "publication_token_policy": "thinking unconfirmed on each format row if median completion tokens >9, any positive reasoning usage/text, or missing reasoning counters. Length threshold is screening only, not proof of reasoning. Missing is not zero."
+}

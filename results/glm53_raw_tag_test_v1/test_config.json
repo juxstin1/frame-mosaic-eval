@@ -1,0 +1,66 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "requests": [
+    {
+      "id": "multiply_open",
+      "body": {
+        "stream": false,
+        "stop": [],
+        "max_new_tokens": 256,
+        "input": "[gMASK]<sop><|system|>Reasoning Effort: Max<|user|>What is 17 times 23? Give the final answer as an integer.<|assistant|><think>",
+        "temperature": 0
+      }
+    },
+    {
+      "id": "multiply_closed",
+      "body": {
+        "stream": false,
+        "stop": [],
+        "max_new_tokens": 256,
+        "input": "[gMASK]<sop><|system|>Reasoning Effort: Max<|user|>What is 17 times 23? Give the final answer as an integer.<|assistant|><think></think>",
+        "temperature": 0
+      }
+    },
+    {
+      "id": "arithmetic_open",
+      "body": {
+        "stream": false,
+        "stop": [],
+        "max_new_tokens": 256,
+        "input": "[gMASK]<sop><|system|>Reasoning Effort: Max<|user|>A box has 18 red balls and 27 blue balls. Remove 9 red balls and add 6 blue balls. How many balls are now in the box? Give the final answer as an integer.<|assistant|><think>",
+        "temperature": 0
+      }
+    },
+    {
+      "id": "arithmetic_closed",
+      "body": {
+        "stream": false,
+        "stop": [],
+        "max_new_tokens": 256,
+        "input": "[gMASK]<sop><|system|>Reasoning Effort: Max<|user|>A box has 18 red balls and 27 blue balls. Remove 9 red balls and add 6 blue balls. How many balls are now in the box? Give the final answer as an integer.<|assistant|><think></think>",
+        "temperature": 0
+      }
+    },
+    {
+      "id": "ordering_open",
+      "body": {
+        "stream": false,
+        "stop": [],
+        "max_new_tokens": 256,
+        "input": "[gMASK]<sop><|system|>Reasoning Effort: Max<|user|>Five people stand in this order: Ada, Ben, Cora, Dan, Eva. Ben and Eva swap places. Then the first person moves to the end. What is the new position of Ben, counting from 1? Give the final answer as an integer.<|assistant|><think>",
+        "temperature": 0
+      }
+    },
+    {
+      "id": "ordering_closed",
+      "body": {
+        "stream": false,
+        "stop": [],
+        "max_new_tokens": 256,
+        "input": "[gMASK]<sop><|system|>Reasoning Effort: Max<|user|>Five people stand in this order: Ada, Ben, Cora, Dan, Eva. Ben and Eva swap places. Then the first person moves to the end. What is the new position of Ben, counting from 1? Give the final answer as an integer.<|assistant|><think></think>",
+        "temperature": 0
+      }
+    }
+  ],
+  "purpose": "Text-only open versus closed think-tag comparison; not a mosaic benchmark"
+}

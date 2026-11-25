@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-25T00:47:10.930199+00:00",
+  "endpoint": "https://api.deepinfra.com/v1/openai",
+  "source": {
+    "path": "docs/mosaics/tile_probe_seq000_mosaic_n16_tot1536_ts1_bd1_row_al48.png",
+    "sha256": "07a007d411fbc6f8cf62505a90d2c4a17ec10ab489b8b0a54fb6884fafb07119",
+    "width": 1536,
+    "height": 1536
+  },
+  "prompt": "Briefly describe the image in one sentence.",
+  "temperature": 0,
+  "max_tokens": 32,
+  "image_detail": "omitted: provider documents it as unsupported",
+  "interpretation": "Image-minus-text prompt-token deltas include image markers; they do not prove encoder resolution or equal visual information across models.",
+  "planned_requests": 14,
+  "attempted_requests": 0,
+  "completed_requests": 0,
+  "models": [],
+  "status": "failed",
+  "error": {
+    "type": "HTTPError",
+    "http_status": 401
+  }
+}

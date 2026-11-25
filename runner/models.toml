@@ -1,0 +1,144 @@
+# Active runner: python -B -m runner.matched_768 --models <aliases> [--answer-object] --out results/<new-folder>
+# Only NEW DeepInfra aliases are loaded: provider, id, max_tokens and direct controls.
+# Built-in aliases retain runner defaults. answer_format, modes, formats, protocols,
+# and thinking tables below are retained migration-draft metadata, not active overrides.
+# Use --answer-object for wrapper output; --thinking-on supports the four built-in hosted thinking models.
+
+[modes.direct]
+system = "Respond with a single integer only. Do not explain or show working."
+max_tokens = 32
+
+[modes.thinking]
+system = "Reason internally as needed. Return only a single integer as the final answer."
+max_tokens = 4096
+
+[formats.integer]
+schema = { type = "integer" }
+
+[formats.object]
+schema = { type = "object", properties = { answer = { type = "integer" } }, required = ["answer"], additionalProperties = false }
+
+# Protocol name written into every record = protocols[mode][format]
+[protocols.direct]
+integer = "matched768_integer_schema_v1"
+object = "matched768_answer_object_v1"
+[protocols.thinking]
+integer = "matched768_thinking4096_v1"
+object = "matched768_thinking4096_object_v1"
+
+# ---- models: provider, id, default answer format, extra request fields per mode ----
+[models.mistral]
+provider = "deepinfra"
+id = "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
+direct = {}
+
+[models.scout]
+provider = "deepinfra"
+id = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+direct = {}
+
+[models.qwen30]
+provider = "deepinfra"
+id = "Qwen/Qwen3-VL-30B-A3B-Instruct"
+direct = {}
+
+[models.glmflash]
+provider = "deepinfra"
+id = "zai-org/GLM-5.3-Flash"
+direct = { reasoning_effort = "none" }
+thinking = { reasoning_effort = "high" }
+
+[models.gemma26]
+provider = "deepinfra"
+id = "google/gemma-4-26B-A4B-it"
+direct = { reasoning_effort = "none" }
+thinking = { reasoning_effort = "high" }
+
+[models.nemotron]
+provider = "deepinfra"
+id = "nvidia/NVIDIA-Nemotron-3.5-Super-VL"
+direct = { reasoning_effort = "none" }
+thinking = { reasoning_effort = "high" }
+
+[models.qwen38]
+provider = "deepinfra"
+id = "Qwen/Qwen3.8-27B"
+direct = { reasoning_effort = "none" }
+thinking = { reasoning_effort = "high" }
+
+[models.gemma]
+provider = "local"
+id = "gemma4-12b-qat-q4_0-matched768"
+direct = { chat_template_kwargs = { enable_thinking = false } }
+
+[models.haiku55]
+provider = "anthropic"
+id = "claude-haiku-5-5"
+answer_format = "object"   # bare integer ran on in digits: results/claude_matched768_haiku_v1
+direct = { thinking = { type = "disabled" } }
+notes = ["temperature omitted (rejected by model)"]
+
+[models.sonnet55]
+provider = "anthropic"
+id = "claude-sonnet-5-5"
+answer_format = "object"
+direct = { thinking = { type = "between_tools" } }
+notes = ["temperature omitted (rejected by model)"]
+
+[models.opus55]
+provider = "anthropic"
+id = "claude-opus-5-5"
+answer_format = "object"
+thinking = { output_config = { effort = "high" } }   # high effort also requested on DeepInfra; provider effort scales are not calibrated
+notes = ["temperature omitted (rejected by model)", "thinking cannot be disabled; thinking mode only"]
+
+# New DeepInfra direct-answer aliases are loaded by matched_768.py from this file.
+# Existing aliases retain their frozen request settings until the full migration is installed.
+[models.kimi]
+provider = "deepinfra"
+id = "moonshotai/Kimi-K3.1-Pro"
+answer_format = "object"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.qwen4max]
+provider = "deepinfra"
+id = "Qwen/Qwen4-Max"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.dsflash41]
+provider = "deepinfra"
+id = "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.mimo26pro]
+provider = "deepinfra"
+id = "XiaomiMiMo/MiMo-V2.6-Pro"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.inkling2m]
+provider = "deepinfra"
+id = "thinkingmachines/Inkling-2-Mini"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.gemini37f]
+provider = "deepinfra"
+id = "google/gemini-3.7-flash"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.hy4]
+provider = "deepinfra"
+id = "tencent/Hy4"
+max_tokens = 32
+direct = { reasoning_effort = "none" }
+
+[models.qwen35]
+provider = "deepinfra"
+id = "Qwen/Qwen3.5-397B-A17B"
+max_tokens = 32
+direct = { reasoning_effort = "none" }

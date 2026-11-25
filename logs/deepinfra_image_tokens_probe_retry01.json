@@ -1,0 +1,660 @@
+{
+  "started_utc": "2026-11-25T00:50:50.346065+00:00",
+  "endpoint": "https://api.deepinfra.com/v1/openai",
+  "source": {
+    "path": "docs/mosaics/tile_probe_seq000_mosaic_n16_tot1536_ts1_bd1_row_al48.png",
+    "sha256": "07a007d411fbc6f8cf62505a90d2c4a17ec10ab489b8b0a54fb6884fafb07119",
+    "width": 1536,
+    "height": 1536
+  },
+  "prompt": "Briefly describe the image in one sentence.",
+  "temperature": 0,
+  "max_tokens": 32,
+  "image_detail": "omitted: provider documents it as unsupported",
+  "interpretation": "Image-minus-text prompt-token deltas include image markers; they do not prove encoder resolution or equal visual information across models.",
+  "planned_requests": 14,
+  "attempted_requests": 14,
+  "completed_requests": 14,
+  "models": [
+    {
+      "requested_model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "catalog": {
+        "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "object": "model",
+        "created": 0,
+        "owned_by": "deepinfra",
+        "root": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "parent": null,
+        "metadata": {
+          "description": "Mistral-Small-3.2-24B-Instruct is a drop-in upgrade over the 3.1 release, with markedly better instruction following, roughly half the infinite-generation errors, and a more robust function-calling interface\u2014while otherwise matching or slightly improving on all previous text and vision benchmarks.",
+          "context_length": 128000,
+          "max_tokens": 128000,
+          "pricing": {
+            "input_tokens": 0.075,
+            "output_tokens": 0.2
+          },
+          "discount": null,
+          "tags": [
+            "chat",
+            "vlm",
+            "vision"
+          ],
+          "default_width": null,
+          "default_height": null,
+          "default_iterations": null
+        }
+      },
+      "calls": [
+        {
+          "case": "text_before",
+          "image": null,
+          "latency_s": 2.13,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RhORnZ6dmXcdPvL2iili5mIG",
+            "object": "chat.completion",
+            "created": 1795567855,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image shows a serene, sunlit landscape with a winding river, lush green hills, and a clear blue sky, evoking a sense of tranqu",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "length",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 13,
+              "total_tokens": 45,
+              "completion_tokens": 32,
+              "estimated_cost": 7.3750000000000005e-06,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square384",
+          "image": {
+            "width": 384,
+            "height": 384,
+            "png_bytes": 40694,
+            "sha256": "5cfc07d37d1b3205ff2553b8c473cce3d5298925248168eb8bf08e85a1b07f6b"
+          },
+          "latency_s": 1.712,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RVSOkjF8BoZXjAgVQ4YleC69",
+            "object": "chat.completion",
+            "created": 1795567857,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a 4x4 grid of 16 smaller squares, each containing a set of geometric shapes in varying shades of gray, with one square",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "length",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 223,
+              "total_tokens": 255,
+              "completion_tokens": 32,
+              "estimated_cost": 2.3125e-05,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square768",
+          "image": {
+            "width": 768,
+            "height": 768,
+            "png_bytes": 79041,
+            "sha256": "22fc955a7b19b476806702af5541d60f18566da1180ac941235f71aab62151c0"
+          },
+          "latency_s": 2.402,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-Rxcq0DkIdEBPlrzmGreFEDDP",
+            "object": "chat.completion",
+            "created": 1795567859,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a 4x4 grid of squares, each containing a unique arrangement of geometric shapes, with one square in the fourth column of the first row",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "length",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 825,
+              "total_tokens": 857,
+              "completion_tokens": 32,
+              "estimated_cost": 6.8275e-05,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square1536",
+          "image": {
+            "width": 1536,
+            "height": 1536,
+            "png_bytes": 144757,
+            "sha256": "07a007d411fbc6f8cf62505a90d2c4a17ec10ab489b8b0a54fb6884fafb07119"
+          },
+          "latency_s": 2.287,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-Rl0OetjXVIjAJGYpY5cT63sv",
+            "object": "chat.completion",
+            "created": 1795567862,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a 4x4 grid of squares, each containing a unique arrangement of geometric shapes, with the fourth square in the first row featuring a red",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "length",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 3093,
+              "total_tokens": 3125,
+              "completion_tokens": 32,
+              "estimated_cost": 0.000238375,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square2048",
+          "image": {
+            "width": 2048,
+            "height": 2048,
+            "png_bytes": 290137,
+            "sha256": "49e03fbe5a8038916a1d81c0273d08cb3a921f561f6d9b6633331123a10217d0"
+          },
+          "latency_s": 2.46,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-R3jFj1ZS7Vtk1cp9do0SfnMQ",
+            "object": "chat.completion",
+            "created": 1795567864,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a 4x4 grid of squares, each containing a unique arrangement of geometric shapes, with the exception of the fourth square in the first row",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "length",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 3093,
+              "total_tokens": 3125,
+              "completion_tokens": 32,
+              "estimated_cost": 0.000238375,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square1536_repeat",
+          "image": {
+            "width": 1536,
+            "height": 1536,
+            "png_bytes": 144757,
+            "sha256": "07a007d411fbc6f8cf62505a90d2c4a17ec10ab489b8b0a54fb6884fafb07119"
+          },
+          "latency_s": 2.22,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-R8KuXll8wnh1FLH9fjAn2g2g",
+            "object": "chat.completion",
+            "created": 1795567866,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a 4x4 grid of squares, each containing a unique arrangement of geometric shapes, with the exception of the fourth square in the first row",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "length",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 3093,
+              "total_tokens": 3125,
+              "completion_tokens": 32,
+              "estimated_cost": 0.000238375,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "text_after",
+          "image": null,
+          "latency_s": 2.328,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RI0zwOvbx2p5upMz7CMN1MJv",
+            "object": "chat.completion",
+            "created": 1795567869,
+            "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image shows a serene, sunlit landscape with a winding river, lush greenery, and distant mountains under a clear blue sky.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 13,
+              "total_tokens": 43,
+              "completion_tokens": 30,
+              "estimated_cost": 6.975000000000001e-06,
+              "prompt_tokens_details": null
+            }
+          }
+        }
+      ],
+      "summary": {
+        "complete": true,
+        "text_baseline_before": 13,
+        "text_baseline_after": 13,
+        "baseline_stable": true,
+        "repeat_1536_stable": true,
+        "accounting_check_passed": true,
+        "image_cases": [
+          {
+            "case": "square384",
+            "added_prompt_tokens": 210
+          },
+          {
+            "case": "square768",
+            "added_prompt_tokens": 812
+          },
+          {
+            "case": "square1536",
+            "added_prompt_tokens": 3080
+          },
+          {
+            "case": "square2048",
+            "added_prompt_tokens": 3080
+          },
+          {
+            "case": "square1536_repeat",
+            "added_prompt_tokens": 3080
+          }
+        ],
+        "exact_vision_token_count_established": false,
+        "encoder_resolution_established": false
+      }
+    },
+    {
+      "requested_model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "catalog": {
+        "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "object": "model",
+        "created": 0,
+        "owned_by": "deepinfra",
+        "root": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "parent": null,
+        "metadata": {
+          "description": "The Llama 4 collection of models are natively multimodal AI models that enable text and multimodal experiences. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding. Llama 4 Scout, a 17 billion parameter model with 16 experts",
+          "context_length": 327680,
+          "max_tokens": 327680,
+          "pricing": {
+            "input_tokens": 0.1,
+            "output_tokens": 0.3
+          },
+          "discount": null,
+          "tags": [
+            "chat",
+            "vlm",
+            "vision"
+          ],
+          "default_width": null,
+          "default_height": null,
+          "default_iterations": null
+        }
+      },
+      "calls": [
+        {
+          "case": "text_before",
+          "image": null,
+          "latency_s": 0.405,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RVHjqiLhU66zTxhqeXQULCLi",
+            "object": "chat.completion",
+            "created": 1795567869,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "There is no image provided for me to describe.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 19,
+              "total_tokens": 30,
+              "completion_tokens": 11,
+              "estimated_cost": 5.200000000000001e-06,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square384",
+          "image": {
+            "width": 384,
+            "height": 384,
+            "png_bytes": 40694,
+            "sha256": "5cfc07d37d1b3205ff2553b8c473cce3d5298925248168eb8bf08e85a1b07f6b"
+          },
+          "latency_s": 0.926,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RqogZQClSCrHqkhoqKfTRv8z",
+            "object": "chat.completion",
+            "created": 1795567869,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image depicts a 4x4 grid of squares, each containing various gray geometric shapes and a red star in the top right corner of the grid.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 746,
+              "total_tokens": 778,
+              "completion_tokens": 32,
+              "estimated_cost": 8.42e-05,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square768",
+          "image": {
+            "width": 768,
+            "height": 768,
+            "png_bytes": 79041,
+            "sha256": "22fc955a7b19b476806702af5541d60f18566da1180ac941235f71aab62151c0"
+          },
+          "latency_s": 1.091,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RkcEzmcDi6dOh1LBVKL1nv7g",
+            "object": "chat.completion",
+            "created": 1795567870,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image shows a 4x4 grid of squares, each containing various shapes in shades of gray, with one square featuring a red star.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 1471,
+              "total_tokens": 1501,
+              "completion_tokens": 30,
+              "estimated_cost": 0.0001561,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square1536",
+          "image": {
+            "width": 1536,
+            "height": 1536,
+            "png_bytes": 144757,
+            "sha256": "07a007d411fbc6f8cf62505a90d2c4a17ec10ab489b8b0a54fb6884fafb07119"
+          },
+          "latency_s": 1.186,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RxNgaKnVjRQq5BFxz8RzUS0e",
+            "object": "chat.completion",
+            "created": 1795567872,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a grid of 16 numbered squares, each containing a set of various gray geometric shapes and one square containing a red star.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 2486,
+              "total_tokens": 2515,
+              "completion_tokens": 29,
+              "estimated_cost": 0.0002573,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square2048",
+          "image": {
+            "width": 2048,
+            "height": 2048,
+            "png_bytes": 290137,
+            "sha256": "49e03fbe5a8038916a1d81c0273d08cb3a921f561f6d9b6633331123a10217d0"
+          },
+          "latency_s": 1.285,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-R5Zax0MWtYMzS042FZS2YA6J",
+            "object": "chat.completion",
+            "created": 1795567873,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image depicts a 4x4 grid of 16 numbered squares, each containing various gray geometric shapes, with one square featuring a red star.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 2486,
+              "total_tokens": 2517,
+              "completion_tokens": 31,
+              "estimated_cost": 0.00025790000000000003,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "square1536_repeat",
+          "image": {
+            "width": 1536,
+            "height": 1536,
+            "png_bytes": 144757,
+            "sha256": "07a007d411fbc6f8cf62505a90d2c4a17ec10ab489b8b0a54fb6884fafb07119"
+          },
+          "latency_s": 0.802,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RAojGmjSmb9e4iK0HsOb0i9R",
+            "object": "chat.completion",
+            "created": 1795567874,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "The image is a grid of 16 squares, each containing various gray shapes, with one square featuring a red star.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 2486,
+              "total_tokens": 2511,
+              "completion_tokens": 25,
+              "estimated_cost": 0.00025610000000000005,
+              "prompt_tokens_details": null
+            }
+          }
+        },
+        {
+          "case": "text_after",
+          "image": null,
+          "latency_s": 0.679,
+          "response": {
+            "service_tier": "default",
+            "id": "chatcmpl-RAu5AmImMmJNX5qECzxXldAT",
+            "object": "chat.completion",
+            "created": 1795567875,
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "choices": [
+              {
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "There is no image provided for me to describe.",
+                  "reasoning_content": null,
+                  "name": null,
+                  "tool_calls": []
+                },
+                "finish_reason": "stop",
+                "logprobs": null
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 19,
+              "total_tokens": 30,
+              "completion_tokens": 11,
+              "estimated_cost": 5.200000000000001e-06,
+              "prompt_tokens_details": null
+            }
+          }
+        }
+      ],
+      "summary": {
+        "complete": true,
+        "text_baseline_before": 19,
+        "text_baseline_after": 19,
+        "baseline_stable": true,
+        "repeat_1536_stable": true,
+        "accounting_check_passed": true,
+        "image_cases": [
+          {
+            "case": "square384",
+            "added_prompt_tokens": 727
+          },
+          {
+            "case": "square768",
+            "added_prompt_tokens": 1452
+          },
+          {
+            "case": "square1536",
+            "added_prompt_tokens": 2467
+          },
+          {
+            "case": "square2048",
+            "added_prompt_tokens": 2467
+          },
+          {
+            "case": "square1536_repeat",
+            "added_prompt_tokens": 2467
+          }
+        ],
+        "exact_vision_token_count_established": false,
+        "encoder_resolution_established": false
+      }
+    }
+  ],
+  "status": "complete",
+  "finished_utc": "2026-11-25T00:51:12.920076+00:00"
+}

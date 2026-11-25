@@ -1,0 +1,102 @@
+{
+  "protocol": "matched768_answer_object_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "models": {
+    "qwen38": "Qwen/Qwen3.8-27B"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "request_options": {
+    "qwen38": {
+      "reasoning_effort": "none"
+    }
+  },
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "server": null,
+  "provider_catalog": {
+    "qwen38": {
+      "id": "Qwen/Qwen3.8-27B",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "Qwen/Qwen3.8-27B",
+      "parent": null,
+      "metadata": {
+        "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be enabled or disabled.",
+        "context_length": 262144,
+        "max_tokens": 262144,
+        "pricing": {
+          "input_tokens": 0.2,
+          "output_tokens": 2.5,
+          "cache_read_tokens": 0.05
+        },
+        "discount": 0.25,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning_effort",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    }
+  },
+  "runner_sha256": "eb2e916c73827c0db10a5b5753eb87cd59eb8cb5887e916372c648d9fef2b6be",
+  "versions": {
+    "python": "3.12.0",
+    "pillow": "12.2.0",
+    "numpy": "2.3.5"
+  }
+}

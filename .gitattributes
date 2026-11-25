@@ -1,0 +1,5 @@
+# Preserve archived requests, responses and source snapshots byte-for-byte.
+results/*matched768*/** -text
+results/glm53_raw_tag_test_v1/** -text
+logs/server/gemma_object_20261124-223126.json -text
+logs/server/gemma_object_20261124-223126.log.err -text

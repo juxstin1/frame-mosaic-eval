@@ -1,0 +1,99 @@
+{
+  "protocol": "matched768_integer_schema_v1",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "integer_answer",
+      "strict": true,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  },
+  "models": {
+    "inkling2m": "thinkingmachines/Inkling-2-Mini"
+  },
+  "system_prompt": "Respond with a single integer only. Do not explain or show working.",
+  "request_options": {
+    "inkling2m": {
+      "reasoning_effort": "none"
+    }
+  },
+  "smoke_per_model": 0,
+  "sweep_per_model": 150,
+  "seed": 0,
+  "tasks": [
+    "moving_dot",
+    "tile_probe",
+    "count_events"
+  ],
+  "n": [
+    4,
+    9,
+    16,
+    36,
+    64
+  ],
+  "seqs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "labels": [
+    false,
+    true
+  ],
+  "output_cap": 32,
+  "temperature": 0,
+  "input_size": [
+    768,
+    768
+  ],
+  "server": null,
+  "provider_catalog": {
+    "inkling2m": {
+      "id": "thinkingmachines/Inkling-2-Mini",
+      "object": "model",
+      "created": 0,
+      "owned_by": "deepinfra",
+      "root": "thinkingmachines/Inkling-2-Mini",
+      "parent": null,
+      "metadata": {
+        "description": "Inkling 2 Mini is a general-purpose multimodal model that accepts text and image inputs and generates text outputs. It is intended for use in English and other languages, and across multiple coding languages.",
+        "context_length": 1048576,
+        "max_tokens": 1048576,
+        "pricing": {
+          "input_tokens": 0.075,
+          "output_tokens": 0.3,
+          "cache_read_tokens": 0.015
+        },
+        "discount": null,
+        "tags": [
+          "chat",
+          "vlm",
+          "vision",
+          "prompt_cache",
+          "reasoning"
+        ],
+        "default_width": null,
+        "default_height": null,
+        "default_iterations": null
+      }
+    }
+  },
+  "runner_sha256": "eb68cc63596d8fb93c12ec4a4e7cca560f73bc749df17deb3f011fb2245ad8f7",
+  "versions": {
+    "python": "3.12.0",
+    "pillow": "12.2.0",
+    "numpy": "2.3.5"
+  },
+  "config_sha256": "da4bfad1a1f13cc5d1c697ab5cb9636545e362c105ac9b98bf3432107f17c61c",
+  "configured_model_aliases": [
+    "inkling2m"
+  ],
+  "output_cap_overrides": {
+    "inkling2m": 32
+  }
+}
